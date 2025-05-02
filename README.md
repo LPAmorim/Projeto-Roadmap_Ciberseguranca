@@ -14,7 +14,7 @@ Aqui, você encontra um roteiro progressivo, com conteúdos distribuídos em ní
 
 ---
 
-VISÃO Geral
+## Visão Geral
 
 \*aqui e onde vou por algumas imagens do projeto.
 
@@ -48,7 +48,7 @@ Definição de foco: Red Team, Blue Team ou Governança & Liderança. As trilhas
 
 ---
 
-Tecnologias e Ferramentas Utilizadas
+## Tecnologias e Ferramentas Utilizadas
 
 - **Linguagens utilizadas:** HTML, CSS, JavaScript;
 
