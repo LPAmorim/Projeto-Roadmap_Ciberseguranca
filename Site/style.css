@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ color: #f0f0f0;
+ font-family: 'Roboto', arial;
+ line-height: 1.6;
+}
+
+.header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: #090909;
+ padding: 1rem 2rem;
+ border-bottom: 2px solid #222;
+}
+
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+
+.logo img {
+ height: 100px;
+}
+
+.logo span {
+ font-size: 1rem;
+ color: #fffffe;
+}
+
+.nav a, span {
+ color: #cccccc;
+ margin-left: 1rem;
+ text-decoration: none;
+ font-size: 1,1rem;
+}
+
+#home {
+ color: #b084f8;
+}
+
+.nav a:hover {
+ color: #b084f8;
+}
+
+.hero {
+ background-color: #0f0f0f;
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ padding: 2rem;
+}
+
+@media (min-width: 768px) {
+ .hero {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px #222;
+ }
+}
+
+.hero-text {
+ max-width: 600px;
+}
+
+.hero-text h1 {
+ font-size: 2rem;
+ margin-bottom: 1rem;
+}
+
+.highlight {
+ color: #b084f8;
+}
+
+.intro {
+ font-size: 1.1rem;
+ color: #ccc;
+}
+
+.description {
+ font-size: 1.3rem;
+ margin: 1rem 0;
+ color: #fffffe;
+}
+
+/* btn e imagem */
+.btn {
+ display: inline-block;
+ background-color: #7256c8;
+ color: #fffffe;
+ padding: 0.5rem 1.2rem;
+ border-radius: 8px;
+ text-decoration: none;
+ transition: background-color;
+}
+
+.btn:hover {
+ background-color: #6d28d9;
+}
+
+.hero-image img {
+ max-width: 100%;
+ border-radius: 12px;
+ box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Frase bíblica */
+.hero-verse {
+ text-align: center;
+ font-style: italic;
+ color: #bbb;
+ font-size: 0.9rem;
+}
+
+.verse {
+ text-align: center;
+ font-style: italic;
+ margin: 2rem auto;
+ color: #cccccc;
+ font-size: 0.9rem;
+}
+
+/* Info Cards */
+.info-section {
+ background-color: #16161a;
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 1.5rem;
+ padding: 2rem;
+}
+
+@media (min-width: 768px) {
+ .info-section {
+  grid-template-columns: 1fr 1fr;
+ }
+}
+
+.card {
+ background-color: #1f1f1f;
+ padding: 1.5rem;
+ border-radius: 12px;
+ box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+ margin-bottom: 1rem;
+ color: #fff;
+}
+
+.card p {
+ font-size: 0.9rem;
+ color: #ccc;
+}
+
+/*estatisticas*/
+.estatisticas { 
+    background-color: #0f0f0f;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+.estatisticas {
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+.estatisticas {
+
+}
+
+/* Footer */
+footer {
+ background-color: #090909;
+ text-align: center;
+ padding: 1.5rem;
+ color: #888;
+ font-size: 0.85rem;
+}
+
+footer .social {
+ margin-bottom: 1rem;
+}
+
+footer .social a {
+ margin: 0 0.8rem;
+ color: #b084f8;
+ text-decoration: none;
+}
+
+footer .social a:hover {
+ text-decoration: underline;
+}
