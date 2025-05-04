@@ -56,7 +56,7 @@ Definição de foco: Red Team, Blue Team ou Governança & Liderança. As trilhas
 
 - **Sistema Operacional:** Kali Linux;
 
-- **API:** Web-dat-vision;
+- **API:** Web-dat-vision e ChartJS;
 
 - **Editor de Codigo:** Visual Studio Code;
 
