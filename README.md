@@ -60,6 +60,8 @@ Definição de foco: Red Team, Blue Team ou Governança & Liderança. As trilhas
 
 - **Editor de Codigo:** Visual Studio Code;
 
+- **Planejamento do Projeto:** Trello;
+
 - **Design:** Canva;
 
 - **Fontes de estudo e referência:** Fundação Bradesco, Coursera, Udemy Cisco, entre outras.
