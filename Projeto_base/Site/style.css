@@ -59,13 +59,13 @@ nav a:hover {
  padding: 2rem;
 }
 
-@media (min-width: 768px) {
+
  .hero {
   flex-direction: row;
+  min-width: 768px;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px #222;
- }
 }
 
 .hero-text {
