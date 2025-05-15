@@ -62,12 +62,12 @@
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <span>CPF:</span>
+            <input id="cpf_input" type="number" placeholder="Digite o CPF sem '.' ou ',' ex: 12345678901" />
           </div>
           <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="123456789-10" />
+            <span>E-mail:</span>
+            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -113,19 +113,21 @@
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
-    var cpfVar = cpf_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var codigoVar = codigo_input.value;
+    var cpfVar = Number(cpf_input.value);
+    var erro = '';
     var idEmpresaVincular
+    console.log(cpfVar.length)
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      cpfVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      codigoVar == "" ||
+      cpfVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -133,54 +135,41 @@
 
       finalizarAguardar();
       return false;
-    } else {
+    } else if(nomeVar.length <= 1){
+      erro = 'Nome muito curto';
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = erro;
+      finalizarAguardar();
+    } 
+    else if(emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0){
+      erro = "Email inválido! O email precisa conter '@' e '.' ex: seunome@suaempresa.com";
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = erro;
+      finalizarAguardar();
+    }
+    else if(senhaVar.length < 5){
+      erro = 'Senha muito curta. Mínimo de 6 caracteres';
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = erro;
+      finalizarAguardar();
+    }
+    else if(senhaVar != confirmacaoSenhaVar){
+      erro = 'As senhas estão diferentes!';
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = erro;
+      finalizarAguardar();
+    }
+    else if(cpfVar.length != 11){
+      erro = 'O CPF precisa ter 11 números'
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = erro;
+      finalizarAguardar();
+    } 
+    else {
       setInterval(sumirMensagem, 5000);
     }
 
-    // validação dos campos
-    if (nomeVar.length < 1) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para campo 'nome', deve ser maior que 1 caracter)";
-
-      finalizarAguardar();
-      return false;
-
-    } else if (emailVar.indexOf('@') < 0) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(O e-mail deve conter '@' e '.')";
-
-      finalizarAguardar();
-      return false;
-
-    } else if (senhaVar.length <= 6) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para campo 'senha', deve ser maior que 6 caracter)";
-
-      finalizarAguardar();
-      return false;
-
-    } else if (confirmacaoSenhaVar !== senhaVar) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para campo 'corfirmação de senha', divergente com o campo 'senha')";
-
-      finalizarAguardar();
-      return false;
-
-    } else if (cpfVar.length !== 11) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para campo 'CPF', deve ter 11 caracter)";
-
-      finalizarAguardar();
-      return false;
-
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+    
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
     for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
@@ -197,7 +186,7 @@
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -206,8 +195,8 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        cpfServer: cpfVar,
         senhaServer: senhaVar,
+        cpfServer: cpfVar,
         idEmpresaVincularServer: idEmpresaVincular
       }),
     })
@@ -216,6 +205,7 @@
 
         if (resposta.ok) {
           cardErro.style.display = "block";
+
           mensagem_erro.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 

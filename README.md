@@ -16,7 +16,7 @@ Aqui, você encontra um roteiro progressivo, com conteúdos distribuídos em ní
 
 ## Visão Geral
 
-<a href="./Documentação/Prototipo do Site/Prototipação do Site.pdf">Prototipação do Site</a>
+<a href="./">Prototipação do Site</a>
 
 ---
 

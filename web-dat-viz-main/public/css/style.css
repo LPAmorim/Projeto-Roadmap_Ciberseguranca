@@ -43,7 +43,7 @@ nav a, span {
  font-size: 1.1rem;
 }
 
-#home {
+.atual {
  color: #b084f8;
 }
 
@@ -81,12 +81,12 @@ nav a:hover {
  color: #b084f8;
 }
 
-.intro {
+.sub-titulo {
  font-size: 1.1rem;
  color: #ccc;
 }
 
-.description {
+p {
  font-size: 1.3rem;
  margin: 1rem 0;
  color: #fffffe;
@@ -163,20 +163,20 @@ nav a:hover {
   font-family: sans-serif;
 }
 
-.titulo {
+.h1 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
-.conteudo-principal {
+.section-statistic-conteudo {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
   gap: 2rem;
   align-items: flex-start;
 }
 
-.card.texto {
+.card.text {
   max-width: 100%;
 }
 
@@ -197,14 +197,14 @@ canvas {
   gap: 1rem;
 }
 
-.card-kpi {
+.kpi-box {
   background-color: #2a2a2a;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
 }
 
-.card-kpi select {
+.kpi-box select {
   background-color: #6c5ce7;
   color: #fff;
   border: none;

@@ -11,7 +11,7 @@ _Implementação de Referência para o seu Projeto de Primeiro Semestre_
 1. Clone este repositório em sua máquina.
 
 
-2. Crie, no Banco de Dados, as tabelas necessárias para o funcionamento deste projeto.
+1. Crie, no Banco de Dados, as tabelas necessárias para o funcionamento deste projeto.
 - Siga as instruções no arquivo **/src/database/script-tabelas.sql**
 
 

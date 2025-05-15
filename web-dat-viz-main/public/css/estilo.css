@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', arial;
-  box-sizing: border-box;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
 }
 
 :root {
-  --header: 1rem 2rem;
-  --tamanho-banner: calc(100vh - var(--header) - var(--footer) - 2px);
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-footer: 1.5rem;
+  --tamanho-footer: 65px;
 }
 
 .container {
@@ -51,12 +51,9 @@ body {
 }
 
 .titulo {
-  font-size: 1rem;
-  color: #fffffe;
-  color: #cccccc;
-  margin-left: 1rem;
-  text-decoration: none;
-  font-size: 1.1rem;
+  color: #32b9cd;
+  width: fit-content;
+  font-weight: 500;
 }
 
 .header h1 {
@@ -211,13 +208,13 @@ body {
 
 .botao {
   cursor: pointer;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ed145b;
+  background-color: #ED145B;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -235,12 +232,12 @@ body {
 }
 
 #div_erros_login {
-  display: none;
+  display: none
 }
 
 /* FORMULARIO */
 
-.alerta_erro {
+.alerta_erro{
   display: flex;
   justify-content: flex-end;
 }
@@ -252,12 +249,12 @@ body {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #ed145b 3px solid;
+  border: #ED145B 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro {
+.card_erro #mensagem_erro{
   font-weight: 500;
   font-size: 20px;
 }
@@ -281,14 +278,14 @@ input {
 }
 
 .btn {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #ed145b;
+  background-color: #ED145B;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -313,7 +310,7 @@ input {
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll;
+  overflow: scroll; 
   height: var(--tamanho-simulador);
 }
 
@@ -357,19 +354,9 @@ input {
 }
 
 @keyframes bell {
-  0% {
-    transform: rotate(25deg);
-  }
-  25% {
-    transform: rotate(-25deg);
-  }
-  50% {
-    transform: rotate(25deg);
-  }
-  75% {
-    transform: rotate(-25deg);
-  }
-  100% {
-    transform: rotate(25deg);
-  }
+  0%   {transform: rotate(25deg)}
+  25%  {transform: rotate(-25deg)}
+  50%  {transform: rotate(25deg)}
+  75%  {transform: rotate(-25deg)}
+  100% {transform: rotate(25deg)}
 }
