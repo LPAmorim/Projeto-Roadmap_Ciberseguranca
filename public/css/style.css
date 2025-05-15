@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ 
+}
+
+body {
+ color: #f0f0f0;
+ 
+ line-height: 1.6;
+}
+
+header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: #090909;
+ padding: 1rem 2rem;
+ border-bottom: 2px solid #222;
+}
+
+.logo {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+
+.logo img {
+ height: 100px;
+}
+
+.logo span {
+ font-size: 1rem;
+ color: #fffffe;
+}
+
+nav a, span {
+ color: #cccccc;
+ margin-left: 1rem;
+ text-decoration: none;
+ font-size: 1.1rem;
+}
+
+.atual {
+ color: #b084f8;
+}
+
+nav a:hover {
+ color: #b084f8;
+}
+
+.hero {
+ background-color: #0f0f0f;
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ padding: 2rem;
+}
+
+
+ .hero {
+  flex-direction: row;
+  min-width: 768px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px #222;
+}
+
+.hero-text {
+ max-width: 600px;
+}
+
+.hero-text h1 {
+ font-size: 2rem;
+ margin-bottom: 1rem;
+}
+
+.highlight {
+ color: #b084f8;
+}
+
+.sub-titulo {
+ font-size: 1.1rem;
+ color: #ccc;
+}
+
+p {
+ font-size: 1.3rem;
+ margin: 1rem 0;
+ color: #fffffe;
+}
+
+/* btn e imagem */
+.btn {
+ display: inline-block;
+ background-color: #7256c8;
+ color: #fffffe;
+ padding: 0.5rem 1.2rem;
+ border-radius: 8px;
+ text-decoration: none;
+ transition: background-color;
+}
+
+.btn:hover {
+ background-color: #6d28d9;
+}
+
+.hero-image img {
+ max-width: 100%;
+ border-radius: 12px;
+ box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Frase bíblica */
+.hero-verse {
+ text-align: center;
+ font-style: italic;
+ color: #bbb;
+ font-size: 0.9rem;
+}
+
+.verse {
+ text-align: center;
+ font-style: italic;
+ margin: 2rem auto;
+ color: #cccccc;
+ font-size: 0.9rem;
+}
+
+/* Info Cards */
+.info-section {
+ background-color: #16161a;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1.5rem;
+ padding: 2rem;
+}
+
+.card {
+ background-color: #1f1f1f;
+ padding: 1.5rem;
+ border-radius: 12px;
+ box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+ margin-bottom: 1rem;
+ color: #fff;
+}
+
+.card p {
+ font-size: 0.9rem;
+ color: #ccc;
+}
+
+/*estatisticas*/
+.estatisticas {
+  padding: 2rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.section-statistic-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.card.text {
+  max-width: 100%;
+}
+
+.chart-container {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+canvas {
+  width: 20%;
+  height: 20%;
+}
+
+.kpis {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kpi-box {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.kpi-box select {
+  background-color: #6c5ce7;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.tempo {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.hero-verse {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.highlight {
+  color: #b388ff;
+}
+
+/* Footer */
+footer {
+ background-color: #090909;
+ text-align: center;
+ padding: 1.5rem;
+ color: #888;
+ font-size: 0.85rem;
+}
+
+footer .social {
+ margin-bottom: 1rem;
+}
+
+footer .social a {
+ margin: 0 0.8rem;
+ color: #b084f8;
+ text-decoration: none;
+}
+
+footer .social a:hover {
+ text-decoration: underline;
+}
