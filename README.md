@@ -16,7 +16,7 @@ Aqui, você encontra um roteiro progressivo, com conteúdos distribuídos em ní
 
 ## Visão Geral
 
-<a href="./">Prototipação do Site</a>
+<a href="./docs/Prototipacao_do_Site.pdf">Prototipação do Site</a>
 
 ---
 
@@ -54,16 +54,20 @@ Definição de foco: Red Team, Blue Team ou Governança & Liderança. As trilhas
 
 - **Banco de Dados:** MySQL;
 
-- **Sistema Operacional:** Kali Linux;
+- **Sistema Operacional da VM:** Kali Linux;
 
-- **API:** Web-dat-vision e ChartJS;
+- **APIs:** Web-dat-viz e ChartJS;
 
 - **Editor de Codigo:** Visual Studio Code;
 
 - **Planejamento do Projeto:** Trello;
 
-- **Design:** Canva;
+- **Design:** Canvas;
 
 - **Fontes de estudo e referência:** Fundação Bradesco, Coursera, Udemy Cisco, entre outras.
 
 ---
+
+## Baseado em
+
+Este projeto é baseado no repositório [web-data-viz](https://github.com/BandTec/web-data-viz), desenvolvido por São Paulo Tech School / Bandtec Digital School. A versão atual inclui novos módulos.
