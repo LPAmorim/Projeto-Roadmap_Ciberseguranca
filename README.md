@@ -56,6 +56,8 @@ Definição de foco: Red Team, Blue Team ou Governança & Liderança. As trilhas
 
 - **Sistema Operacional da VM:** Kali Linux;
 
+- **Ambiente de Execução:** Node.js;
+
 - **APIs:** Web-dat-viz e ChartJS;
 
 - **Editor de Codigo:** Visual Studio Code;
