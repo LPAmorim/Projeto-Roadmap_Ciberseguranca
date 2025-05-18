@@ -364,3 +364,169 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
 }
+/* Fim do Footer */
+
+/* Inicio do Login */
+
+.login {
+  background-color: #090909;
+  border-bottom: solid 2px #cccc;
+  border-top: solid 2px #cccc;
+  min-height: 500px;
+  align-content: center;
+}
+
+.login .container {
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  max-width: 80%;
+}
+
+
+.card-deLogin {
+  width: 50%;
+  height: 400px;
+  background-color: #000000;
+  border-radius: 28px;
+  border: 1px solid #7256c8;
+  box-shadow: 12px 10px #000000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.card-deLogin h2 {
+  background-color: #7d28d9;
+  color: #000000;
+  width: 65%;
+  text-align: center;
+  border-radius: 28px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border: 1px solid #cccc;
+}
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.formulario span {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.formulario input {
+  padding: 0.8rem;
+  border: 2px solid #7d28d9;
+  text-align: center;
+  border-radius: 28px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+}
+
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: black;
+  background-color: #7d28d9;
+  border: 1px solid #cccc;
+  width: 120px;
+  height: 30px;
+  align-self: start;
+  margin-right: 231px;
+}
+
+.botao:hover {
+  background-color: #b084f8;
+}
+
+.login-in {
+  text-decoration: none;
+  color: #7d28d9;
+  width: 40%;
+  align-self: end;
+  text-align: end;
+}
+
+.login-in:hover {
+  text-decoration: underline;
+  color: #cccc;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none;
+}
+
+/* alertas error */
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #000000;
+  color: #cccccc;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #7d28d9 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+/* SIMULADOR */
