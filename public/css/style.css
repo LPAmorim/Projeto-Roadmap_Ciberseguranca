@@ -42,6 +42,8 @@ header {
 
 .logo {
   height: 100px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 }
 
 ul {
@@ -73,15 +75,14 @@ nav a:hover {
 
 /* Fim da nav/header */
 
+/* section hero */
 .title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 .section-hero {
   display: flex;
-  /* Melhor que grid nesse caso */
-  flex-direction: row;
-  justify-content: space-between;
+  gap: 1.5rem;
   padding: 2rem 5rem 0 5rem;
   background-color: #0f0f0f;
   border-bottom: solid 2px #222;
@@ -94,20 +95,21 @@ nav a:hover {
 }
 
 .highlight1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #b084f8;
 }
 
 .highlight {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #b084f8;
   margin-left: 8px;
 }
 
 .sub-titulo {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #ccc;
   margin-top: 1rem;
+  padding-right: 4px;
 }
 
 p {
@@ -143,7 +145,7 @@ p {
   align-content: center;
   max-width: 100%;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Frase bíblica */
@@ -152,139 +154,211 @@ p {
   font-style: italic;
   margin: 1rem auto;
   color: #cccccc;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .verse-bible {
   width: 100%;
   display: flex;
-  justify-content: center; /* Alinha conteúdo no centro */
+  justify-content: center;
+  /* Alinha conteúdo no centro */
   font-style: italic;
   color: #bbb;
-  font-size: 1.3rem;
-  margin: 5rem 0 10px 0;
+  font-size: 1rem;
+  margin: 3rem 0 10px 0;
 }
-/* Fim da section hero */
 
+/* Fim da section hero */
 
 /* Info Cards */
 .section-info {
   display: flex;
   justify-content: center;
   padding: 2rem 5rem;
+  padding-bottom: 6rem;
   background-color: #16161a;
   border-bottom: solid 2px #222;
+  flex-wrap: wrap;
+}
+
+.title-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 4rem;
+}
+
+.container-cards {
+  display: flex;
+  gap: 2rem;
 }
 
 .card {
   background-color: #1f1f1f;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-
+  padding: 2rem;
+  border-radius: 40px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.5);
 }
 
-.card h2 {
-  margin-bottom: 1rem;
-  color: #fff;
+b {
+  color: #b084f8;
 }
 
 .card p {
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 1.2rem;
 }
 
-/*estatisticas*/
-.estatisticas {
-  padding: 2rem;
-  background-color: #1e1e1e;
-  color: #fff;
+.card h2 {
+  font-size: 2rem;
+  text-align: center;
 }
 
-.section-statistic-conteudo {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  align-items: flex-start;
+/* Fim da section info */
+
+
+/* section statistic */
+
+.section-statistic {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 5rem 0 5rem;
+  background-color: #0f0f0f;
+  border-bottom: solid 2px #222;
+  flex-wrap: wrap;
 }
 
-.card.text {
-  max-width: 100%;
+.container-statistic {
+  flex: 1;
+  max-width: 700px;
 }
 
-.chart-container {
-  background-color: #2a2a2a;
+.statistic-text {
+  background-color: #222;
+  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 20px;
+}
+
+.statistic-text h2 {
+  font-size: 1.5rem;
+}
+
+.statistic-text p {
+  font-size: 1.1rem;
 }
 
 canvas {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 400px;
+  background-color: #222;
+  padding: 1rem;
+  max-width: 520px;
+  max-height: 384px;
+  border-radius: 20px;
+  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
 }
 
 .kpis {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 163px;
+  max-height: 384px;
 }
 
 .kpi-box {
-  background-color: #2a2a2a;
+  background-color: #222;
+  border: solid 1px #b084f8;
+  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 20px;
   text-align: center;
-  min-width: 200px;
+}
+
+.kpi-box span {
+  font-size: 1rem;
 }
 
 .kpi-box select {
-  background-color: #6c5ce7;
-  color: #fff;
-  border: none;
+  background-color: #7256c8;
+  color: white;
+  border: black;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  border-radius: 5px;
-}
-
-.tempo {
-  text-align: right;
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-.hero-verse {
+  border-radius: 20px;
+  width: 100%;
   text-align: center;
-  margin-top: 2rem;
-  font-style: italic;
-  font-size: 0.9rem;
+}
+
+.kpi-box select:hover {
+  background-color: #6d28d9;
+}
+
+.kpi-media {
+  font-size: 1.2rem;
   color: #ccc;
 }
 
-.highlight {
-  color: #b388ff;
+.tempo {
+  color: #cccccc;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 0;
 }
+/* Fim da section statistic */
+
 
 /* Footer */
+
 footer {
-  background-color: #090909;
-  text-align: center;
-  padding: 1.5rem;
-  color: #888;
-  font-size: 0.85rem;
+  display: flex;
+  background-color: #000000;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
-footer .social {
+.social {
+  margin-top: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  gap: 5rem;
+  text-align: center;
 }
 
-footer .social a {
-  margin: 0 0.8rem;
-  color: #b084f8;
+.container-social > ul {
+  margin-bottom: 15px;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.container-social > p {
+  font-size: 1.2rem;
+}
+
+.container-social ul:first-of-type a {
+  color: #6d28d9;
   text-decoration: none;
+  font-size: large;
 }
 
-footer .social a:hover {
+.container-social ul > a:hover {
+  color: #b084f8;
   text-decoration: underline;
+}
+
+.container-social ul:nth-of-type(2) a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: large;
+}
+
+.container-social ul:nth-of-type(2) a:hover {
+  color: #b084f8;
+  text-decoration: underline;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

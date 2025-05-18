@@ -58,22 +58,22 @@
     </p>
   </section>
 
-
   <section class="section-info">
-    <div class="container">
-      <div class="card text">
+    <h1 class="title-info">Cibersegurança em Alta: Cenário e Direção</h1>
+    <div class="container-cards">
+      <div class="card">
         <h2>Cenário atual da cibersegurança</h2>
         <p>
-          Diante do crescimento exponencial da área de
-          cibersegurança e da <b>demanda cada vez maior</b>
+          Diante do crescimento exponencial de ameaças cibernéticas,
+          e da <b>demanda cada vez maior</b>
           por <b>profissionais qualificados</b>, é fundamental
-          criar estratégias acessíveis que ajudem
-          iniciantes a se orientarem nesse campo.
+          oferecer caminhos acessíveis que orientem os iniciantes
+          na área.
           Contudo, a grande quantidade de informações
           disponíveis na internet pode gerar confusão,
           desmotivação e até abandono dos estudos,
-          principalmente para quem não sabe por onde
-          começar.
+          principalmente para quem <b>não sabe por onde
+            começar</b>.
         </p>
       </div>
       <div class="card text">
@@ -95,62 +95,78 @@
   </section>
 
   <section class="section-statistic">
-    <h1>Tudo que é bom tem seu preço a se pagar</h1>
+    <h1 class="title-info">Tudo que é bom tem seu preço a se pagar</h1>
 
-    <div class="section-statistic-conteudo">
-      <div class="card text">
+    <div class="container-statistic">
+      <div class="statistic-text">
         <h2>O preço do conhecimento</h2>
         <p>
           Cibersegurança é uma das áreas mais promissoras da tecnologia, mas
           também uma das mais exigentes. O profissional precisa estar em <b>constante
-            atualização</b> — novas ferramentas, linguagens, malwares e ataques surgem o tempo todo. Além da técnica,
-          é preciso resiliência, disciplina e disposição para aprender sempre. Não é fácil, mas é justamente por isso
-          que
-          poucos dominam, e muitos valorizam.
+            atualização</b> de novas ferramentas, linguagens, malwares e ataques que
+          surgem o tempo todo. Além da técnica, é preciso resiliência, disciplina e disposição para aprender sempre. Não
+          é fácil, mas é justamente por isso
+          que poucos dominam, e muitos valorizam.
         </p>
       </div>
+    </div>
 
-      <div class="chart-container">
-        <canvas id="myChart"></canvas> // chartJS
+    <canvas id="myChart"></canvas>
+
+    <div class="kpis">
+      <p class="tempo">Ultima atualização: 4 meses</p>
+
+      <div class="kpi-box">
+        <span>Áreas de atuação:</span>
+        <select id="areasDaCiber">
+          <option selected>Selecione</option>
+          
+          <optgroup label="Analista de Cibersegurança">
+            <option value="1">Estágio</option>
+            <option value="2">Júnior</option>
+            <option value="3">Pleno</option>
+            <option value="4">Sênior</option>
+            <option value="5">Coordenador</option>
+            <option value="6">Gerente</option>
+            <option value="7">CISO</option>
+          </optgroup>
+        </select>
       </div>
 
-      <div class="kpis">
-        <p class="tempo">4 meses atrás</p>
-
-        <div class="kpi-box">
-          <span>Áreas de atuação</span>
-          <select id="areasDaCiber">
-            <option value="#">Escolha</option>
-          </select>
-        </div>
-
-        <div class="kpi-box">
-          <p>Média salarial:</p>
-          <p><small>R$60.000<br>a<br>R$2000</small></p>
-        </div>
+      <div class="kpi-box">
+        <p class="kpi-media">Média salarial:</p>
+        <p><i>R$60.000<br>a<br>R$2000</i></p>
       </div>
     </div>
 
-    <div class="verse-bible">
-      <em>"O preguiçoso deseja e nada consegue, mas os desejos do diligente são amplamente satisfeitos."</em>
+    <p class="verse-bible">"O preguiçoso deseja e nada consegue, mas os desejos do diligente são amplamente
+      satisfeitos."
       <span class="highlight"> - Provérbios 13:4</span>
-    </div>
+    </p>
   </section>
 
 
   <footer>
-    <div class="container">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
-        <a href="https://github.com/LPAmorim">GitHub</a>
-        <a href="#">Cadastre-se</a>
+    <div class="social">
+      <div class="container-social">
+        <ul>
+          <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
+          <a href="https://github.com/LPAmorim">GitHub</a>
+          <a href="https://open.spotify.com/playlist/6quxUsvyvcCh60BZAWldWb?pi=4KZGO39iTuyqn">Spotify</a>
+        </ul>
+        <ul class="autoria">
+          <a href="index.html">Home</a>
+          <a href="login.html">Roadmap</a>
+          <a href="login.html">Entretenimento</a>
+          <a href="login.html">Insights</a>
+          <a href="login.html">Login</a>
+        </ul>
+        <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
       </div>
 
-      <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
-      <span class="version">v1.0.0</span>
-
-      <div class="citação">
+      <div class="author">
         <img src="../public/assets/icon/Logan-SPTech.png" alt="Logan-SPTech">
+        <small>V1.0.0</small>
 
       </div>
     </div>
