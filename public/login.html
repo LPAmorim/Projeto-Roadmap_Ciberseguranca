@@ -1,45 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Login</title>
+    <title>Roadmap Cibersegurança</title>
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="../public/assets/icon/Logan.png">
 </head>
 
 <body>
-
-    <!--Header-->
-
-    <div class="header">
+    <header>
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+            <div class="header-container">
+                <a href="index.html"><img class="logo" src="../public/assets/icon/Logan.png"
+                        alt="Logo Roadmap Cibersegurança" /></a>
+                <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
+            </div>
 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Roadmap</a></li>
+                    <li><a href="login.html">Entretenimento</a></li>
+                    <li><a href="login.html">Insights</a></li>
+                    <li><a class="atual" href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <div class="login">
         <div class="alerta_erro">
@@ -48,22 +41,30 @@
             </div>
         </div>
         <div class="container">
-            <div class="card card-login">
-                <h2>Olá de volta!</h2>
+            <div class="card-deLogin card-login">
+                <h2>Login</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
+                        <input class="ipt" id="email_input" type="email" placeholder="Login">
                     </div>
                     <div class="campo">
                         <span>Senha:</span>
                         <input id="senha_input" type="password" placeholder="******">
+
                     </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+
+                    <div>
+                        <button class="botao" onclick="entrar()">Entrar</button>
+
+                        <a href="cadastro.html" class="login-in">
+                            <smal>Login-in</smal>
+                        </a>
+                    </div>
                 </div>
 
                 <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                    <img src="./assets/log/aguarde-pink.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
@@ -71,22 +72,37 @@
         </div>
     </div>
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
-    <!--footer fim-->
+    <footer>
+        <div class="social">
+            <div class="container-social">
+                <ul>
+                    <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
+                    <a href="https://github.com/LPAmorim">GitHub</a>
+                    <a href="https://open.spotify.com/playlist/6quxUsvyvcCh60BZAWldWb?pi=4KZGO39iTuyqn">Spotify</a>
+                </ul>
+                <ul class="autoria">
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Roadmap</a>
+                    <a href="login.html">Entretenimento</a>
+                    <a href="login.html">Insights</a>
+                    <a href="login.html">Login</a>
+                </ul>
+                <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
+            </div>
 
+            <div class="author">
+                <a href="https://sptech.school/"><img src="../public/assets/icon/Logan-SPTech.png"
+                        alt="Logan-SPTech"></a>
+                <small>V1.0.0</small>
+
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
 
 <script>
-
-
     function entrar() {
         aguardar();
 
@@ -132,7 +148,7 @@
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000);
 
                 });
 
