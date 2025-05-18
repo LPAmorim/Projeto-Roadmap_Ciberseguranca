@@ -296,6 +296,8 @@ canvas {
 .kpi-media {
   font-size: 1.2rem;
   color: #ccc;
+  margin: 0;
+  height: 53px;
 }
 
 .tempo {
