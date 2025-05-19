@@ -108,7 +108,8 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  let listaEmailCadastrado = [];
+  let listaApelidoCadastrado = [];
 
   function cadastrar() {
     // aguardar();
@@ -119,11 +120,8 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var cpfVar = Number(cpf_input.value);
+    var apelidoVar = apelido_input.value;
     var erro = '';
-    var idEmpresaVincular
-    console.log(cpfVar.length)
 
     // Verificando se há algum campo em branco
     if (
@@ -131,60 +129,67 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == "" ||
-      cpfVar == ""
+      apelidoVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "Campos invalidos! Deve-se preencher todos os campos";
 
       finalizarAguardar();
-      return false;
-    } else if (nomeVar.length <= 1) {
-      erro = 'Nome muito curto';
+      return;
+
+    } else if (nomeVar.length < 3) {
+      erro = 'Nome invalido! Minimo 3 caracteres';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
+      return;
+
     }
-    else if (emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0) {
-      erro = "Email inválido! O email precisa conter '@' e '.' ex: seunome@suaempresa.com";
+    else if (emailVar.indexOf("@") < 0 || emailVar.indexOf(".com") < 0) {
+      erro = "Email inválido! O email precisa conter '@' e '.com' ex: seunome@provedor.com";
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
+      return;
+
     }
-    else if (senhaVar.length < 5) {
-      erro = 'Senha muito curta. Mínimo de 6 caracteres';
+    else if (senhaVar.length < 8 || /[A-Z]/.test(senhaVar) == false) {
+      erro = 'Senha invalida! Minimo de 8 caracteres e deve conter 1 caracter maiúsculo';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
+      return;
+
     }
     else if (senhaVar != confirmacaoSenhaVar) {
-      erro = 'As senhas estão diferentes!';
+      erro = 'Senha invalida! senhas estão diferentes!';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
+      return;
+
     }
-    else if (cpfVar.length != 11) {
-      erro = 'O CPF precisa ter 11 números'
+    else if (apelidoVar.length <= 1 || apelidoVar.length >= 9) {
+      erro = 'Apelido invalido! Deve ter no maximo 8 caracteres e no minimo 1 caracter'
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
+      return;
+      
     }
     else {
       setInterval(sumirMensagem, 5000);
     }
 
-
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
+    //desenvolvimento...
+    for (let i = 0; i < listaEmailCadastrado.length; i++) {
+      if (listaEmailCadastrado[i].email == emailVar) {
+        idEmpresaVincular = listaEmailCadastrado[i].id
         break;
       } else {
         cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+        mensagem_erro.innerHTML = "Email já existente!";
         finalizarAguardar();
       }
     }
