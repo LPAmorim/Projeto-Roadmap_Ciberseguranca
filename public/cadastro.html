@@ -1,43 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>AquaTech | Cadastro</title>
+  <title>Roadmap Cibersegurança</title>
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="../public/assets/icon/Logan.png">
 </head>
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
+<body>
+  <header>
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+      <div class="header-container">
+        <a href="index.html"><img class="logo" src="../public/assets/icon/Logan.png"
+            alt="Logo Roadmap Cibersegurança" /></a>
+        <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Roadmap</a></li>
+          <li><a href="login.html">Entretenimento</a></li>
+          <li><a href="login.html">Insights</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <!--header fim-->
+  </header>
 
   <div class="login">
     <div class="alerta_erro">
@@ -45,29 +39,22 @@
         <span id="mensagem_erro"></span>
       </div>
     </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
+    <div class="container ctn-cadastro">
+      <div class="card-deLogin card-cadastro">
+        <h2>Cadastro</h2>
+
+        <div class="formulario card-cadastro">
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="number" placeholder="Digite o CPF sem '.' ou ',' ex: 12345678901" />
+            <span>Apelido:</span>
+            <input id="apelido_input" type="text" placeholder="Seu Apelido de Exibição" />
           </div>
           <div class="campo">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <input id="email_input" type="text" placeholder="meuemail@gmail.com" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -77,10 +64,11 @@
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
+          <button class="botao cadastrar" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+          <img src="./assets/log/aguarde-pink.gif" id="loading-gif">
         </div>
 
         <div id="div_erros_login"></div>
@@ -88,14 +76,31 @@
     </div>
   </div>
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+  <footer>
+    <div class="social">
+      <div class="container-social">
+        <ul>
+          <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
+          <a href="https://github.com/LPAmorim">GitHub</a>
+          <a href="https://open.spotify.com/playlist/6quxUsvyvcCh60BZAWldWb?pi=4KZGO39iTuyqn">Spotify</a>
+        </ul>
+        <ul class="autoria">
+          <a href="index.html">Home</a>
+          <a href="login.html">Roadmap</a>
+          <a href="login.html">Entretenimento</a>
+          <a href="login.html">Insights</a>
+          <a href="login.html">Login</a>
+        </ul>
+        <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
+      </div>
+
+      <div class="author">
+        <a href="https://sptech.school/"><img src="../public/assets/icon/Logan-SPTech.png" alt="Logan-SPTech"></a>
+        <small>V1.0.0</small>
+
+      </div>
     </div>
-  </div>
-  <!--footer fim-->
+  </footer>
 </body>
 
 </html>
@@ -135,41 +140,41 @@
 
       finalizarAguardar();
       return false;
-    } else if(nomeVar.length <= 1){
+    } else if (nomeVar.length <= 1) {
       erro = 'Nome muito curto';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
-    } 
-    else if(emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0){
+    }
+    else if (emailVar.indexOf("@") < 0 || emailVar.indexOf(".") < 0) {
       erro = "Email inválido! O email precisa conter '@' e '.' ex: seunome@suaempresa.com";
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
     }
-    else if(senhaVar.length < 5){
+    else if (senhaVar.length < 5) {
       erro = 'Senha muito curta. Mínimo de 6 caracteres';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
     }
-    else if(senhaVar != confirmacaoSenhaVar){
+    else if (senhaVar != confirmacaoSenhaVar) {
       erro = 'As senhas estão diferentes!';
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
     }
-    else if(cpfVar.length != 11){
+    else if (cpfVar.length != 11) {
       erro = 'O CPF precisa ter 11 números'
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
-    } 
+    }
     else {
       setInterval(sumirMensagem, 5000);
     }
 
-    
+
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
     for (let i = 0; i < listaEmpresasCadastradas.length; i++) {

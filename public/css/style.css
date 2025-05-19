@@ -306,6 +306,7 @@ canvas {
   font-size: 0.7rem;
   margin: 0;
 }
+
 /* Fim da section statistic */
 
 
@@ -321,19 +322,18 @@ footer {
 
 .social {
   margin-top: 1rem;
-  margin-bottom: 1rem;
   display: flex;
   gap: 5rem;
   text-align: center;
 }
 
-.container-social > ul {
+.container-social>ul {
   margin-bottom: 15px;
   justify-content: center;
   font-weight: bolder;
 }
 
-.container-social > p {
+.container-social>p {
   font-size: 1.2rem;
 }
 
@@ -343,7 +343,7 @@ footer {
   font-size: large;
 }
 
-.container-social ul > a:hover {
+.container-social ul>a:hover {
   color: #b084f8;
   text-decoration: underline;
 }
@@ -364,6 +364,7 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 /* Fim do Footer */
 
 /* Inicio do Login */
@@ -416,7 +417,6 @@ footer {
   width: 80%;
   justify-content: space-around;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .formulario span {
@@ -486,7 +486,7 @@ footer {
 }
 
 /* alertas error */
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -503,7 +503,7 @@ footer {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -529,4 +529,18 @@ footer {
   width: 50px;
 }
 
-/* SIMULADOR */
+/* Fim do Login */
+
+/* Inicio do cadastro */
+
+.card-cadastro {
+  height: 100%;
+}
+
+.cadastrar {
+  margin-top: 2rem;
+}
+
+.ctn-cadastro {
+  margin: 3rem;
+}
