@@ -176,21 +176,30 @@
       mensagem_erro.innerHTML = erro;
       finalizarAguardar();
       return;
-      
+
     }
     else {
       setInterval(sumirMensagem, 5000);
     }
 
-    //desenvolvimento...
+    for (let i = 0; i < listaApelidoCadastrado.length; i++) {
+      if (listaApelidoCadastrado[i].apelido == apelidoVar) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Apelido já existente!";
+        finalizarAguardar();
+      } else {
+          break;
+      }
+    }
+
     for (let i = 0; i < listaEmailCadastrado.length; i++) {
       if (listaEmailCadastrado[i].email == emailVar) {
-        idEmpresaVincular = listaEmailCadastrado[i].id
-        break;
-      } else {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "Email já existente!";
         finalizarAguardar();
+        
+      } else {
+        break;
       }
     }
 
@@ -206,8 +215,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        cpfServer: cpfVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        apelidoServer: apelidoVar,
       }),
     })
       .then(function (resposta) {
@@ -239,16 +247,17 @@
 
   // Listando empresas cadastradas 
   function listar() {
-    fetch("/empresas/listar", {
+    fetch("/usuarios/listar", {
       method: "GET",
     })
       .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
+        console.log(resposta)
+        resposta.json().then((email) => {
+          email.forEach((email) => {
+            listaEmailCadastrado.push(email);
 
             console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+            console.log(listaEmailCadastrado[0].email)
           });
         });
       })
