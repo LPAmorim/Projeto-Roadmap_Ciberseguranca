@@ -46,6 +46,5 @@ function buscarNotasPessoaisPorUsuario(idUsuario) { // função para buscar os c
 module.exports = {
   buscarInsightPorUsuario,
   buscarNotasPessoaisPorUsuario,
-  inserirNotaPessoal,
-  cadastrar
+  inserirNotaPessoal
 }

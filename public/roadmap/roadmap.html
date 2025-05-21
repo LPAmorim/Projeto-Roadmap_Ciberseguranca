@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Roadmap Cibersegurança</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="../public/assets/icon/Logan.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="index.html"><img class="logo" src="../public/assets/icon/Logan.png"
+                        alt="Logo Roadmap Cibersegurança" /></a>
+                <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Roadmap</a></li>
+                    <li><a href="login.html">Entretenimento</a></li>
+                    <li><a href="login.html">Insights</a></li>
+                    <li><a class="atual" href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-deLogin">
+                <h2>Login</h2>
+                
+                <div class="formulario">
+                    <div class="campo">
+                        <span>E-mail:</span>
+                        <input class="ipt" id="email_input" type="email" placeholder="Login">
+                    </div>
+                    <div class="campo">
+                        <span>Senha:</span>
+                        <input id="senha_input" type="password" placeholder="******">
+
+                    </div>
+
+                    <div>
+                        <button class="botao" onclick="entrar()">Entrar</button>
+
+                        <a href="cadastro.html" class="login-in">
+                            <smal>Login-in</smal>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/log/aguarde-pink.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social">
+            <div class="container-social">
+                <ul>
+                    <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
+                    <a href="https://github.com/LPAmorim">GitHub</a>
+                    <a href="https://open.spotify.com/playlist/6quxUsvyvcCh60BZAWldWb?pi=4KZGO39iTuyqn">Spotify</a>
+                </ul>
+                <ul class="autoria">
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Roadmap</a>
+                    <a href="login.html">Entretenimento</a>
+                    <a href="login.html">Insights</a>
+                    <a href="login.html">Login</a>
+                </ul>
+                <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
+            </div>
+
+            <div class="author">
+                <a href="https://sptech.school/"><img src="../public/assets/icon/Logan-SPTech.png"
+                        alt="Logan-SPTech"></a>
+                <small>V1.0.0</small>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

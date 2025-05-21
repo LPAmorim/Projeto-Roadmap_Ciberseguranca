@@ -79,3 +79,5 @@ INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duraca
     ('O Jogo da Imitação', 2014, 'Baseados em Fatos Reais', 114),
     ('Black Mirror', 2011, 'Ficção Científica', 1733),
     ('Hacker', 2015, 'Ação e Suspense', 133);
+
+SELECT*from users;

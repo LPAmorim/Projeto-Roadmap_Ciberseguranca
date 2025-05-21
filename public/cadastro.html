@@ -9,15 +9,14 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="../public/assets/icon/Logan.png">
+  <link rel="icon" href="/assets/icon/Logan.png">
 </head>
 
 <body>
   <header>
     <div class="container">
       <div class="header-container">
-        <a href="index.html"><img class="logo" src="../public/assets/icon/Logan.png"
-            alt="Logo Roadmap Cibersegurança" /></a>
+        <a href="index.html"><img class="logo" src="/assets/icon/Logan.png" alt="Logo Roadmap Cibersegurança" /></a>
         <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
       </div>
 
@@ -68,7 +67,7 @@
           <button class="botao cadastrar" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
-          <img src="./assets/log/aguarde-pink.gif" id="loading-gif">
+          <img src="/assets/log/aguarde-pink.gif" id="loading-gif">
         </div>
 
         <div id="div_erros_login"></div>
@@ -95,7 +94,7 @@
       </div>
 
       <div class="author">
-        <a href="https://sptech.school/"><img src="../public/assets/icon/Logan-SPTech.png" alt="Logan-SPTech"></a>
+        <a href="https://sptech.school/"><img src="/assets/icon/Logan-SPTech.png" alt="Logan-SPTech"></a>
         <small>V1.0.0</small>
 
       </div>
@@ -179,16 +178,17 @@
 
     }
     else {
-      setInterval(sumirMensagem, 5000);
+      setInterval(sumirMensagem, 7000);
     }
 
     for (let i = 0; i < listaApelidoCadastrado.length; i++) {
       if (listaApelidoCadastrado[i].apelido == apelidoVar) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "Apelido já existente!";
-        finalizarAguardar();
+        return;
+
       } else {
-          break;
+        break;
       }
     }
 
@@ -196,7 +196,7 @@
       if (listaEmailCadastrado[i].email == emailVar) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "Email já existente!";
-        finalizarAguardar();
+        return;
         
       } else {
         break;
@@ -228,7 +228,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "/login.html";
           }, "2000");
 
           limparFormulario();
