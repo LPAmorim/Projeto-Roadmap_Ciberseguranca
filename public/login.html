@@ -43,10 +43,10 @@
         <div class="container">
             <div class="card-deLogin">
                 <h2>Login</h2>
-                
+
                 <div class="formulario">
                     <div class="campo">
-                        <span>E-mail:</span>
+                        <span>E-mail ou Apelido:</span>
                         <input class="ipt" id="email_input" type="email" placeholder="Login">
                     </div>
                     <div class="campo">
@@ -92,8 +92,7 @@
             </div>
 
             <div class="author">
-                <a href="https://sptech.school/"><img src="/assets/icon/Logan-SPTech.png"
-                        alt="Logan-SPTech"></a>
+                <a href="https://sptech.school/"><img src="/assets/icon/Logan-SPTech.png" alt="Logan-SPTech"></a>
                 <small>V1.0.0</small>
 
             </div>
@@ -107,12 +106,12 @@
     function entrar() {
         aguardar();
 
-        var emailVar = email_input.value;
+        var emailORApelidoVar = email_input.value;
         var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (emailORApelidoVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
             finalizarAguardar();
             return false;
         }
@@ -120,7 +119,7 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM LOGIN: ", emailORApelidoVar);
         console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
@@ -129,7 +128,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
+                loginServer: emailORApelidoVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
@@ -139,13 +138,13 @@
                 console.log(resposta);
 
                 resposta.json().then(json => {
-                    console.log(json);
+                    console.log("usuario logado:", json);
                     console.log(JSON.stringify(json));
+
+                    //salvando dados
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    sessionStorage.APELIDO_USUARIO = json.apelido;
 
                     setTimeout(function () {
                         window.location = "./roadmap/roadmap.html";
@@ -155,16 +154,20 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
-                    console.error(texto);
+                    console.log("Erro ao tentar realizar o login!", texto);
+                    mensagem_erro.innerHTML = texto;
+                    cardErro.style.display = "block";
                     finalizarAguardar(texto);
                 });
             }
 
         }).catch(function (erro) {
-            console.log(erro);
+            console.log("Erro na requisição:", erro);
+            mensagem_erro.innerHTML = "Erro ao conectar com o servidor.";
+            cardErro.style.display = "block";
+            finalizarAguardar();
         })
 
         return false;

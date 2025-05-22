@@ -1,51 +1,39 @@
 var usuarioModel = require("../models/usuarioModel");
 
 function autenticar(req, res) {
-  var email = req.body.emailServer;
+  var login = req.body.loginServer;
   var senha = req.body.senhaServer;
 
-  if (email == undefined) {
-    res.status(400).send("Seu email está undefined!");
-  } else if (senha == undefined) {
+  if (!login) {
+    res.status(400).send("Seu login está undefined!");
+  } else if (!senha) {
     res.status(400).send("Sua senha está indefinida!");
   } else {
+    usuarioModel.autenticar(login, senha)
+      .then((resultado) => {
+        console.log(`\nResultados encontrados: ${resultado.length}`);
+        console.log(`Resultados: ${JSON.stringify(resultado)}`);
 
-    usuarioModel.autenticar(email, senha)
-      .then(
-        function (resultadoAutenticar) {
-          console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-          console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
-          if (resultadoAutenticar.length == 1) {
-            console.log(resultadoAutenticar);
-
-            usuarioModel.verificarEmailExistente(email, senha)
-              .then((resultadoAquarios) => {
-                if (resultadoAquarios.length > 0) {
-                  res.json({
-                    id: resultadoAutenticar[0].id,
-                    email: resultadoAutenticar[0].email,
-                    nome: resultadoAutenticar[0].nome,
-                    senha: resultadoAutenticar[0].senha,
-                    apelido: resultadoAutenticar[0].apelido,
-                  });
-                } else {
-                  res.status(204).json({ apelido: [] });
-                }
-              })
-          } else if (resultadoAutenticar.length == 0) {
-            res.status(403).send("Email ou senha inválido(s)");
-          } else {
-            res.status(403).send("Mais de um usuário com o mesmo login!");
-          }
+        if (resultado.length === 1) {
+          const user = resultado[0];
+          return res.json({
+            id: user.id,
+            email: user.email,
+            nome: user.nome,
+            senha: user.senha,
+            apelido: user.apelido,
+          });
+        } else if (resultado.length === 0) { // corrigido: resultadoAutenticar -> resultado
+          res.status(403).send("Login ou senha inválido(s)");
+        } else {
+          res.status(403).send("Mais de um usuário com o mesmo login!");
         }
-      ).catch(
-        function (erro) {
-          console.log(erro);
-          console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-          res.status(500).json(erro.sqlMessage);
-        }
-      );
+      })
+      .catch((erro) => {
+        console.log(erro);
+        console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+      });
   }
 }
 
@@ -68,7 +56,7 @@ function cadastrar(req, res) {
     res.status(400).send("Sua senha está undefined!");
   } else {
 
-    usuarioModel.verificarEmailExistente(email, apelido)
+    usuarioModel.verificarEmailOuApelidoExistente(email, apelido)
       .then(usuarios => {
         let mensagem = "";
 

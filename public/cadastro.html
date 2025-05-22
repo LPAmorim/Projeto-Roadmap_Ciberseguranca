@@ -213,7 +213,10 @@
         }
       })
       .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
+        console.log("Erro na requisição:", resposta);
+            mensagem_erro.innerHTML = "Seu cadastro já existe.";
+            cardErro.style.display = "block";
+            finalizarAguardar();
         finalizarAguardar();
       });
 

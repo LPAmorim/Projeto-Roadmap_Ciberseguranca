@@ -1,7 +1,7 @@
 CREATE DATABASE roadmap_cyber;
 USE roadmap_cyber;
 
-
+SELECT * from users;
 -- Tabela de usuários
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
