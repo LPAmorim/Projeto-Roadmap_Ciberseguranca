@@ -1,6 +1,18 @@
 CREATE DATABASE roadmap_cyber;
 USE roadmap_cyber;
 
+
+-- Tabela de usuários
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+    apelido VARCHAR(12) UNIQUE,
+    email VARCHAR(50) UNIQUE,
+    senha VARCHAR(50) NOT NULL
+    -- insight_id INT,
+    -- FOREIGN KEY (insight_id) REFERENCES insight(id)
+);
+
 -- Tabela base de filmes/séries
 CREATE TABLE filmes_series (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -10,65 +22,61 @@ CREATE TABLE filmes_series (
     tempo_de_duracao INT
 );
 
--- Tabela de usuários
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50),
-    apelido VARCHAR(12) UNIQUE,
-    email VARCHAR(50) UNIQUE,
-    senha VARCHAR(50) NOT NULL,
-    insight_id INT,
-    FOREIGN KEY (insight_id) REFERENCES insight(id)
+create table insigth (
+    id int primary key auto_increment,
+    fkapelido int,
+    fkfilmes_series int,
+    nota decimal(1,1) 
 );
-
--- Tabela de insights (gráficos pessoais e gerais)
-CREATE TABLE insight (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    fkuser INT,
-    fkfilmes_series INT,
-    tipo ENUM('pessoal', 'geral'),
-    nota DECIMAL(3,1), -- exemplo: 10.0
-    FOREIGN KEY (fkuser) REFERENCES users(id),
-    FOREIGN KEY (fkfilmes_series) REFERENCES filmes_series(id)
-);
+DROP DATABASE roadmap_cyber;
+-- Tabela de insights ()
+-- CREATE TABLE insight (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     fkuser INT,
+--     fkfilmes_series INT,
+--     tipo ENUM('pessoal', 'geral'),
+--     nota DECIMAL(3,1), -- exemplo: 10.0
+--     FOREIGN KEY (fkuser) REFERENCES users(id),
+--     FOREIGN KEY (fkfilmes_series) REFERENCES filmes_series(id)
+-- );
 
 -- Questionários
-CREATE TABLE questionario (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(100),
-    descricao TEXT
-);
+-- CREATE TABLE questionario (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     titulo VARCHAR(100),
+--     descricao TEXT
+-- );
 
--- Tentativas de usuários em questionários
-CREATE TABLE tentativa (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    usuario_id INT,
-    questionario_id INT,
-    pontuacao INT,
-    data_tentativa DATETIME,
-    FOREIGN KEY (usuario_id) REFERENCES users(id),
-    FOREIGN KEY (questionario_id) REFERENCES questionario(id)
-);
+-- -- Tentativas de usuários em questionários
+-- CREATE TABLE tentativa (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     usuario_id INT,
+--     questionario_id INT,
+--     pontuacao INT,
+--     data_tentativa DATETIME,
+--     FOREIGN KEY (usuario_id) REFERENCES users(id),
+--     FOREIGN KEY (questionario_id) REFERENCES questionario(id)
+-- );
 
 -- Perguntas dos questionários
-CREATE TABLE perguntas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    questionario_id INT,
-    texto TEXT,
-    pontuacao_correta INT,
-    FOREIGN KEY (questionario_id) REFERENCES questionario(id)
-);
+-- CREATE TABLE perguntas (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     questionario_id INT,
+--     texto TEXT,
+--     pontuacao_correta INT,
+--     FOREIGN KEY (questionario_id) REFERENCES questionario(id)
+-- );
 
 -- Respostas que o usuário deu
-CREATE TABLE respostasUser (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    tentativa_id INT,
-    pergunta_id INT,
-    resposta_usuario TEXT,
-    correta BOOLEAN,
-    FOREIGN KEY (tentativa_id) REFERENCES tentativa(id),
-    FOREIGN KEY (pergunta_id) REFERENCES perguntas(id)
-);
+-- CREATE TABLE respostasUser (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     tentativa_id INT,
+--     pergunta_id INT,
+--     resposta_usuario TEXT,
+--     correta BOOLEAN,
+--     FOREIGN KEY (tentativa_id) REFERENCES tentativa(id),
+--     FOREIGN KEY (pergunta_id) REFERENCES perguntas(id)
+-- );
 
 INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duracao) VALUES
     ('Hacker: Todo Crime tem um Início', 2016, 'Suspense', 95),
@@ -80,4 +88,4 @@ INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duraca
     ('Black Mirror', 2011, 'Ficção Científica', 1733),
     ('Hacker', 2015, 'Ação e Suspense', 133);
 
-SELECT*from users;
+SELECT*from filmes_series;
