@@ -105,11 +105,8 @@
 </html>
 
 <script>
-
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmailCadastrado = [];
-  let listaApelidoCadastrado = [];
-
+  var insightPessoal = 0;
+  
   function cadastrar() {
     // aguardar();
 
@@ -181,28 +178,6 @@
       setInterval(sumirMensagem, 7000);
     }
 
-    for (let i = 0; i < listaApelidoCadastrado.length; i++) {
-      if (listaApelidoCadastrado[i].apelido == apelidoVar) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "Apelido já existente!";
-        return;
-
-      } else {
-        break;
-      }
-    }
-
-    for (let i = 0; i < listaEmailCadastrado.length; i++) {
-      if (listaEmailCadastrado[i].email == emailVar) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "Email já existente!";
-        return;
-        
-      } else {
-        break;
-      }
-    }
-
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -228,7 +203,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "/login.html";
+            window.location = "login.html";
           }, "2000");
 
           limparFormulario();
@@ -243,27 +218,6 @@
       });
 
     return false;
-  }
-
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/usuarios/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        console.log(resposta)
-        resposta.json().then((email) => {
-          email.forEach((email) => {
-            listaEmailCadastrado.push(email);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmailCadastrado[0].email)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
   }
 
   function sumirMensagem() {
