@@ -64,12 +64,12 @@ function cadastrar(req, res) {
           for (i = 0; i < usuarios.length; i++) {
             const user = usuarios[i];
 
-            if (usuarios.email === email && !mensagem.includes('Email já Cadastrado')) {
+            if (user.email === email && !mensagem.includes('Email já Cadastrado')) {
               mensagem += "Email já cadastrado. ";
             }
 
 
-            if (usuarios.apelido === apelido && !mensagem.includes("Apelido já cadastrado")) {
+            if (user.apelido === apelido && !mensagem.includes("Apelido já cadastrado")) {
               mensagem += "Apelido já cadastrado. ";
             }
           }
