@@ -8,8 +8,8 @@
   font-family: "Roboto", arial;
   scroll-behavior: smooth;
   /*rolagem suave*/
-  
-  ::-webkit-scrollbar {
+
+    ::-webkit-scrollbar {
     width: 20px;
   }
 
@@ -33,6 +33,7 @@ header {
   background-color: #090909;
   border-bottom: 2px solid #222;
   padding: 1rem 5rem;
+
 }
 
 .container {
@@ -50,7 +51,8 @@ header {
 
 .header-container h1 {
   font-weight: lighter;
-  font-size: 30px;
+  font-size: 25px;
+  align-self: center;
 }
 
 .logo {
@@ -61,7 +63,7 @@ header {
 
 ul {
   display: flex;
-  gap: 40px;
+  gap: 35px;
   list-style: none;
 }
 
@@ -75,7 +77,7 @@ nav a,
 span {
   color: #cccccc;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .atual {
@@ -86,242 +88,47 @@ nav a:hover {
   color: #b084f8;
 }
 
+.container-login {
+  position: relative; /* posicionem em relação a ele */
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfil-login {
+  position: absolute;
+  border: 1px solid #cccccc;
+  width: 70%;
+  border-radius: 80px;
+  z-index: 1;
+  box-shadow: 7px 5px #222;
+}
+
+.b_usuario {
+  position: absolute;
+  z-index: 2;
+  font-size: 15px;
+  top: 90px;
+}
+
+.sair {
+  color: rgb(244, 31, 31);
+}
+
 /* Fim da nav/header */
 
-/* section hero */
-.title {
-  font-size: 2.2rem;
-}
+/* Inicio da intro do roadmap */
 
-.section-hero {
-  display: flex;
-  gap: 1.5rem;
-  padding: 2rem 5rem 0 5rem;
+.roadmap-intro {
+  width: 100%;
+  height: 500px;
   background-color: #0f0f0f;
-  border-bottom: solid 2px #222;
-  flex-wrap: wrap;
+
 }
 
-.container-hero {
-  flex: 1;
-  max-width: 600px;
-}
-
-.highlight1 {
-  font-size: 2.2rem;
-  color: #b084f8;
-}
-
-.highlight {
-  font-size: 1rem;
-  color: #b084f8;
-  margin-left: 8px;
-}
-
-.sub-titulo {
-  font-size: 1rem;
-  color: #ccc;
-  margin-top: 1rem;
-  padding-right: 4px;
-}
-
-p {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: #fffffe;
-}
-
-.btn {
-  display: flex;
-  width: 57%;
-  background-color: #7256c8;
-  color: #fffffe;
-  font-size: 25px;
-  border-radius: 28px;
-  text-decoration: none;
-  justify-content: center;
-}
-
-.btn:hover {
-  background-color: #6d28d9;
-}
-
-.hero-image {
-  max-width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.hero-image img {
-  align-content: center;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 10px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Frase bíblica */
-.verse {
-  text-align: center;
-  font-style: italic;
-  margin: 1rem auto;
-  color: #cccccc;
-  font-size: 1rem;
-}
-
-.verse-bible {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* Alinha conteúdo no centro */
-  font-style: italic;
-  color: #bbb;
-  font-size: 1rem;
-  margin: 3rem 0 10px 0;
-}
-
-/* Fim da section hero */
-
-/* Info Cards */
-.section-info {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 5rem;
-  padding-bottom: 6rem;
-  background-color: #16161a;
-  border-bottom: solid 2px #222;
-  flex-wrap: wrap;
-}
-
-.title-info {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 2.2rem;
-  margin-bottom: 4rem;
-}
-
-.container-cards {
-  display: flex;
-  gap: 2rem;
-}
-
-.card {
-  background-color: #1f1f1f;
-  padding: 2rem;
-  border-radius: 40px;
-  box-shadow: 12px 12px rgba(0, 0, 0, 0.5);
-}
-
-b {
-  color: #b084f8;
-}
-
-.card p {
-  font-size: 1.2rem;
-}
-
-.card h2 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-/* Fim da section info */
-
-
-/* section statistic */
-
-.section-statistic {
-  display: flex;
-  gap: 1.5rem;
-  padding: 2rem 5rem 0 5rem;
-  background-color: #0f0f0f;
-  border-bottom: solid 2px #222;
-  flex-wrap: wrap;
-}
-
-.container-statistic {
-  flex: 1;
-  max-width: 700px;
-}
-
-.statistic-text {
-  background-color: #222;
-  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  border-radius: 20px;
-}
-
-.statistic-text h2 {
-  font-size: 1.5rem;
-}
-
-.statistic-text p {
-  font-size: 1.1rem;
-}
-
-canvas {
-  background-color: #222;
-  padding: 1rem;
-  max-width: 520px;
-  max-height: 384px;
-  border-radius: 20px;
-  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
-}
-
-.kpis {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 163px;
-  max-height: 384px;
-}
-
-.kpi-box {
-  background-color: #222;
-  border: solid 1px #b084f8;
-  box-shadow: 10px 8px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.kpi-box span {
-  font-size: 1rem;
-}
-
-.kpi-box select {
-  background-color: #7256c8;
-  color: white;
-  border: black;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  border-radius: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-.kpi-box select:hover {
-  background-color: #6d28d9;
-}
-
-.kpi-media {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin: 0;
-  height: 53px;
-}
-
-.tempo {
-  color: #cccccc;
-  text-align: center;
-  font-size: 0.7rem;
-  margin: 0;
-}
-
-/* Fim da section statistic */
-
+/* Fim da intro roadmap */
 
 /* Footer */
 
@@ -454,6 +261,7 @@ footer {
 .botao {
   cursor: pointer;
   font-family: "Barlow", sans-serif;
+  border: 0;
   border-radius: 28px;
   font-weight: 600;
   font-size: 1rem;
@@ -462,10 +270,8 @@ footer {
   border: 1px solid #cccc;
   width: 120px;
   height: 30px;
-  align-items: center;
+  align-self: center;
   margin-right: 231px;
-  margin-left: 145px;
-  margin-bottom: 10px;
 }
 
 .botao:hover {
@@ -475,6 +281,7 @@ footer {
 .login-in {
   text-decoration: none;
   color: #7d28d9;
+  width: 40%;
   align-self: end;
   text-align: end;
 }
@@ -487,11 +294,6 @@ footer {
 .loading-div {
   width: 50px;
   display: none;
-}
-
-.login-cadastro {
-  flex-wrap: wrap;
-  text-align: center;
 }
 
 .loading-div img {
