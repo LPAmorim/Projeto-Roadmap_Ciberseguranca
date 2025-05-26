@@ -2,6 +2,7 @@ CREATE DATABASE roadmap_cyber;
 USE roadmap_cyber;
 
 SELECT * from users;
+TRUNCATE users;
 -- Tabela de usuários
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
