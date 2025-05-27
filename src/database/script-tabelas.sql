@@ -1,8 +1,6 @@
 CREATE DATABASE roadmap_cyber;
 USE roadmap_cyber;
 
-SELECT * from users;
-TRUNCATE users;
 -- Tabela de usuários
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -29,6 +27,21 @@ create table insigth (
     fkfilmes_series int,
     nota decimal(1,1) 
 );
+
+INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duracao) VALUES
+    ('Hacker: Todo Crime tem um Início', 2016, 'Suspense', 95),
+    ('Mr. Robot', 2015, 'Engenharia Social e Hacker', 2540),
+    ('Snowden', 2016, 'Baseados em Fatos Reais', 135),
+    ('Invasores – Nenhum Sistema Está a Salvo', 2014, 'Ficção Tecnológica', 102),
+    ('Matrix', 1999, 'Ficção Científica', 136),
+    ('O Jogo da Imitação', 2014, 'Baseados em Fatos Reais', 114),
+    ('Black Mirror', 2011, 'Ficção Científica', 1733),
+    ('Hacker', 2015, 'Ação e Suspense', 133);
+
+
+SELECT * from users;
+TRUNCATE users;
+SELECT*from filmes_series;
 DROP DATABASE roadmap_cyber;
 -- Tabela de insights ()
 -- CREATE TABLE insight (
@@ -78,15 +91,3 @@ DROP DATABASE roadmap_cyber;
 --     FOREIGN KEY (tentativa_id) REFERENCES tentativa(id),
 --     FOREIGN KEY (pergunta_id) REFERENCES perguntas(id)
 -- );
-
-INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duracao) VALUES
-    ('Hacker: Todo Crime tem um Início', 2016, 'Suspense', 95),
-    ('Mr. Robot', 2015, 'Engenharia Social e Hacker', 2540),
-    ('Snowden', 2016, 'Baseados em Fatos Reais', 135),
-    ('Invasores – Nenhum Sistema Está a Salvo', 2014, 'Ficção Tecnológica', 102),
-    ('Matrix', 1999, 'Ficção Científica', 136),
-    ('O Jogo da Imitação', 2014, 'Baseados em Fatos Reais', 114),
-    ('Black Mirror', 2011, 'Ficção Científica', 1733),
-    ('Hacker', 2015, 'Ação e Suspense', 133);
-
-SELECT*from filmes_series;

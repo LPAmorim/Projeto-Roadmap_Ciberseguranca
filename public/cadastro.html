@@ -106,7 +106,7 @@
 
 <script>
   var insightPessoal = 0;
-  
+
   function cadastrar() {
     // aguardar();
 
@@ -194,33 +194,44 @@
       }),
     })
       .then(function (resposta) {
-        console.log("resposta: ", resposta);
+        console.log("resposta: ", resposta.status);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          console.log("Entrei no if");
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          cardErro.style.display = "block";
 
           setTimeout(() => {
             window.location = "login.html";
-          }, "2000");
+          }, 3000);
 
-          limparFormulario();
-          finalizarAguardar();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          console.log("Entrei no else");
+
+          resposta.text().then(texto => {
+            console.log(texto) // trata o erro que foi enviado do sql
+
+
+            mensagem_erro.innerHTML = texto;
+            cardErro.style.display = "block";
+
+            setTimeout(() => {
+              finalizarAguardar();
+            }, 5000);
+          })
         }
       })
-      .catch(function (resposta) {
-        console.log("Erro na requisição:", resposta);
-            mensagem_erro.innerHTML = "Seu cadastro já existe.";
-            cardErro.style.display = "block";
-            finalizarAguardar();
+      .catch(function (erro) {
+        console.log("Entrei no cath");
+
+        console.log("Erro na requisição:", erro);
+
+        mensagem_erro.innerHTML = "Erro inesperado ao tentar realizar o cadastro";
+        cardErro.style.display = "block";
         finalizarAguardar();
       });
-
-    return false;
+    return false
   }
 
   function sumirMensagem() {

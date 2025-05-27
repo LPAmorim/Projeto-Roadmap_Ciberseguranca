@@ -60,7 +60,6 @@ function cadastrar(req, res) {
       .then(usuarios => {
         let mensagem = "";
 
-        if (usuarios.length > 0) {
           for (i = 0; i < usuarios.length; i++) {
             const user = usuarios[i];
 
@@ -68,17 +67,18 @@ function cadastrar(req, res) {
               mensagem += "Email já cadastrado. ";
             }
 
-
             if (user.apelido === apelido && !mensagem.includes("Apelido já cadastrado")) {
               mensagem += "Apelido já cadastrado. ";
             }
           }
-          return res.status(409).send(mensagem);
+          
+          if (mensagem !== "") {
+            return res.status(409).send(mensagem);
+          }
 
-        }
         return usuarioModel.cadastrar(nome, apelido, email, senha);
       })
-      .then(resultado => {
+      .then(resultado => { // e o res
         if (resultado) {
           res.status(201).json(resultado);
         } else {

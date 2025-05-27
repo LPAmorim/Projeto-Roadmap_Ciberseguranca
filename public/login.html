@@ -68,7 +68,6 @@
                     <img src="/assets/log/aguarde-pink.gif" id="loading-gif">
                 </div>
 
-                <div id="div_erros_login"></div>
             </div>
         </div>
     </div>
@@ -159,7 +158,7 @@
                     console.log("Erro ao tentar realizar o login!", texto);
                     mensagem_erro.innerHTML = texto;
                     cardErro.style.display = "block";
-                    finalizarAguardar(texto);
+                    finalizarAguardar();
                 });
             }
 
