@@ -8,9 +8,10 @@
 
   <link rel="stylesheet" href="../css/roadmap.css" />
   <link rel="icon" href="../public/assets/icon/Logan.png">
+  <script src="../js/sessao.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()">
   <header>
     <div class="container">
       <div class="header-container">
@@ -25,12 +26,12 @@
           <li><a class="atual" href="#">Roadmap</a></li>
           <li><a href="login.html">Entretenimento</a></li>
           <li><a href="login.html">Insights</a></li>
-          <li><a class="sair" href="../index.html">Sair</a></li>
+          <li><a class="sair" onclick="limparSessao()">Sair</a></li>
         </ul>
       </nav>
       <div class="container-login">
         <img class="perfil-login" src="../assets/icon/Icone de Perfil padrão.png">
-        <span class="b_usuario" id="b_usuario"></span>
+        <span class="b_usuario-name" id="b_usuario">dfghj</span>
       </div>
     </div>
   </header>
@@ -66,7 +67,5 @@
   </footer>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./js/charjs.js"></script>
 
 </html>

@@ -462,10 +462,6 @@ footer {
   border: 1px solid #cccc;
   width: 120px;
   height: 30px;
-  align-items: center;
-  margin-right: 231px;
-  margin-left: 145px;
-  margin-bottom: 10px;
 }
 
 .botao:hover {
@@ -490,8 +486,13 @@ footer {
 }
 
 .login-cadastro {
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   text-align: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .loading-div img {
@@ -555,8 +556,12 @@ footer {
   height: 100%;
 }
 
+
 .cadastrar {
   margin-top: 2rem;
+  align-self: center;
+  width: 300px;
+  height: 35px;
 }
 
 .ctn-cadastro {
