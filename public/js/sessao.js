@@ -3,9 +3,6 @@ function validarSessao() {
     var apelido = sessionStorage.APELIDO_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
-    console.log(apelido);
-    console.log(sessionStorage.APELIDO_USUARIO);
-
 
     if (email != null && apelido != null) {
         b_usuario.innerHTML = apelido;
