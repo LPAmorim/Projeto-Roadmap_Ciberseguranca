@@ -21,18 +21,19 @@ function buscarInsightPorUsuario(usuarioId) {
   return database.executar(instrucaoSql);
 }
 
-function inserirNotaPessoal(idUsuario, idFilme, nota) { // avaliação de filmes pelo user
-  const instrucaoSql = `
-    INSERT INTO insight (fkuser, fkfilmes_series, tipo, nota)
-    VALUES (${idUsuario}, ${idFilme}, 'pessoal', ${nota});
+function inserirNotaPessoal(fkuser, fkfilmes_series, nota) { // avaliação de filmes pelo user
+  var instrucaoSql = `
+    INSERT INTO insight (fkuser, fkfilmes_series, nota)
+    VALUES (${fkuser}, ${fkfilmes_series}, ${nota});
   `;
+
   console.log("Executando SQL:", instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
 
 function buscarNotasPessoaisPorUsuario(idUsuario) { // função para buscar os calculos no banco
-  const instrucaoSql = `
+  var instrucaoSql = `
     SELECT f.titulo, i.nota
     FROM insight i
     JOIN filmes_series f ON i.fkfilmes_series = f.id

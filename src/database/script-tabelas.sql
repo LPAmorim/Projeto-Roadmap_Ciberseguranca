@@ -21,11 +21,13 @@ CREATE TABLE filmes_series (
     tempo_de_duracao INT
 );
 
-create table insigth (
-    id int primary key auto_increment,
-    fkapelido int,
-    fkfilmes_series int,
-    nota decimal(1,1) 
+CREATE TABLE insight (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fkuser INT,
+    fkfilmes_series INT,
+    nota DECIMAL(3,1), -- exemplo: 10.0
+    FOREIGN KEY (fkuser) REFERENCES users(id),
+    FOREIGN KEY (fkfilmes_series) REFERENCES filmes_series(id)
 );
 
 INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duracao) VALUES
@@ -38,11 +40,45 @@ INSERT INTO filmes_series (titulo, ano_De_Lancamento, categoria, tempo_de_duraca
     ('Black Mirror', 2011, 'Ficção Científica', 1733),
     ('Hacker', 2015, 'Ação e Suspense', 133);
 
+insert into insight (fkuser, fkfilmes_series, nota)VALUES
+(1, 1, 2.5);
+
 
 SELECT * from users;
 TRUNCATE users;
 SELECT*from filmes_series;
+SELECT*from insight;
+
 DROP DATABASE roadmap_cyber;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Tabela de insights ()
 -- CREATE TABLE insight (
 --     id INT PRIMARY KEY AUTO_INCREMENT,
