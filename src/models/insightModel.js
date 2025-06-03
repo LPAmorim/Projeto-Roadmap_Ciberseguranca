@@ -21,7 +21,7 @@ function buscarInsightPorUsuario(usuarioId) {
   return database.executar(instrucaoSql);
 }
 
-function inserirNotaPessoal(fkuser, fkfilmes_series, nota) { // avaliação de filmes pelo user
+function inserirNotaPessoal(fkuser, fkfilmes_series, nota,) { // avaliação de filmes pelo user
   var instrucaoSql = `
     INSERT INTO insight (fkuser, fkfilmes_series, nota)
     VALUES (${fkuser}, ${fkfilmes_series}, ${nota});
@@ -42,10 +42,17 @@ function buscarNotasPessoaisPorUsuario(idUsuario) { // função para buscar os c
   return database.executar(instrucaoSql);
 }
 
+function listarMediaPoster(posterId) {
+  var instrucaoSql = `
+  SELECT ROUND(AVG(nota), 1) AS media FROM insight WHERE fkfilmes_series = ${posterId};
+  `;
+  return database.executar(instrucaoSql);
+}
 
 
 module.exports = {
   buscarInsightPorUsuario,
   buscarNotasPessoaisPorUsuario,
-  inserirNotaPessoal
+  inserirNotaPessoal,
+  listarMediaPoster
 }

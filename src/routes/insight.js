@@ -11,4 +11,7 @@ router.post("/inserir", function (req, res) {
   insightController.inserirNota(req, res);
 });
 
+router.get("/listar", function (req, res) {
+  insightController.listaMediaPorPoster(req, res);
+})
 module.exports = router;

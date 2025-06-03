@@ -33,3 +33,6 @@ function finalizarAguardar(texto) {
     }
 }
 
+function finalizarAtualizar() {
+    cardErro.style.display = "none";
+}

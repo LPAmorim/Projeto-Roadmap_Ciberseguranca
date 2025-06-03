@@ -61,6 +61,12 @@
 
     </section>
 
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+
     <div class="conteiner-cards">
         <div class="card">
             <div class="posters">
@@ -76,16 +82,16 @@
                         Alex toma uma decisão para mudar a vida de seus pais, que estavam enfrentando problemas
                         financeiros.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media1" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota1">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -94,7 +100,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(1)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota1.value), 1)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -111,18 +118,22 @@
                     <h2>Sinopse</h2>
                     <strong>Mr. Robot (2015–2019)</strong>
                     <p>
-                        Elliot Alderson (Rami Malek) é um jovem programadorbrilhante, mas socialmente retraído, que trabalha comoengenheiro de segurança virtual durante o dia e atua comohacker vigilante à noite. Sua vida muda quando é recrutadopor um misterioso grupo de hackers liderado por "Mr.Robot" (Christian Slater) para destruir a empresa que ele épago para proteger. A série mergulha em temas comocibersegurança, vigilância e a luta interna de Elliot contraseus próprios demônios.
+                        Elliot Alderson (Rami Malek) é um jovem programadorbrilhante, mas socialmente retraído, que
+                        trabalha comoengenheiro de segurança virtual durante o dia e atua comohacker vigilante à noite.
+                        Sua vida muda quando é recrutadopor um misterioso grupo de hackers liderado por "Mr.Robot"
+                        (Christian Slater) para destruir a empresa que ele épago para proteger. A série mergulha em
+                        temas comocibersegurança, vigilância e a luta interna de Elliot contraseus próprios demônios.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Ficção e Tecnológica </p>
                     <p>Nota de 0 a 5: <span id="media2" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota2">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -131,7 +142,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(2)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota2.value), 2)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -148,18 +160,20 @@
                     <h2>Sinopse</h2>
                     <strong>Snowden (2016)</strong>
                     <p>
-                        O filme retrata a história real de EdwardSnowden, ex-analista da NSA, que revelouao mundo detalhes de programas devigilância global do governo dos EUA. Atrama aborda questões de privacidade,ética e segurança nacional.
+                        O filme retrata a história real de EdwardSnowden, ex-analista da NSA, que revelouao mundo
+                        detalhes de programas devigilância global do governo dos EUA. Atrama aborda questões de
+                        privacidade,ética e segurança nacional.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Baseado em Fatos Reais</p>
                     <p>Nota de 0 a 5: <span id="media3" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota3">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -168,7 +182,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(3)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota3.value), 3)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -185,18 +200,19 @@
                     <h2>Sinopse</h2>
                     <strong>Invasores – Nenhum Sistema Está a Salvo</strong>
                     <p>
-                        Benjamin, um jovem hacker alemão,junta-se a um grupo de hackers quebusca reconhecimento mundial. O filmeexplora temas de identidade, fama e asconsequências do cibercrime.
+                        Benjamin, um jovem hacker alemão,junta-se a um grupo de hackers quebusca reconhecimento mundial.
+                        O filmeexplora temas de identidade, fama e asconsequências do cibercrime.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media4" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota4">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -205,7 +221,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(4)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota4.value), 4)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -222,18 +239,21 @@
                     <h2>Sinopse</h2>
                     <strong>Hacker: Todo crime tem um início</strong>
                     <p>
-                        Thomas Anderson, um programador decomputadores, descobre que o mundo que conheceé uma simulação criada por máquinas para controlara humanidade. Com a ajuda de rebeldes, ele acordapara a realidade e assume o papel de “O Escolhido”.Matrix é um clássico que mistura cyberpunk, filosofiae crítica social sobre tecnologia e liberdade.
+                        Thomas Anderson, um programador decomputadores, descobre que o mundo que conheceé uma simulação
+                        criada por máquinas para controlara humanidade. Com a ajuda de rebeldes, ele acordapara a
+                        realidade e assume o papel de “O Escolhido”.Matrix é um clássico que mistura cyberpunk,
+                        filosofiae crítica social sobre tecnologia e liberdade.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media5" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota5">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -242,7 +262,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(5)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota5.value), 5)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -259,18 +280,19 @@
                     <h2>Sinopse</h2>
                     <strong>Hacker: Todo crime tem um início</strong>
                     <p>
-                        A história de Alan Turing, matemáticobritânico que decifrou códigos nazistasdurante a Segunda Guerra Mundial,contribuindo para o desenvolvimentoda computação moderna.
+                        A história de Alan Turing, matemáticobritânico que decifrou códigos nazistasdurante a Segunda
+                        Guerra Mundial,contribuindo para o desenvolvimentoda computação moderna.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media6" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota6">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -279,7 +301,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(6)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota( Number(ipt_nota6.value), 6)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -296,18 +319,19 @@
                     <h2>Sinopse</h2>
                     <strong>Hacker: Todo crime tem um início</strong>
                     <p>
-                        Série antológica que explora um futuropróximo onde a tecnologia colide comos instintos humanos mais sombrios,levantando questões éticas sobreinovação e sociedade.
+                        Série antológica que explora um futuropróximo onde a tecnologia colide comos instintos humanos
+                        mais sombrios,levantando questões éticas sobreinovação e sociedade.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media7" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota7">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -316,7 +340,8 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(7)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota( Number(ipt_nota7.value), 7)">Encaminhar</button></p>
                     </p>
                 </div>
             </div>
@@ -333,18 +358,20 @@
                     <h2>Sinopse</h2>
                     <strong>Hacker: Todo crime tem um início</strong>
                     <p>
-                        Um hacker condenado é liberado da prisãopara ajudar as autoridades americanas echinesas a rastrear uma rede de crimescibernéticos que ameaça a segurança global.O filme mergulha em ataques virtuais,espionagem e o impacto da tecnologia nasrelações internacionais.
+                        Um hacker condenado é liberado da prisãopara ajudar as autoridades americanas echinesas a
+                        rastrear uma rede de crimescibernéticos que ameaça a segurança global.O filme mergulha em
+                        ataques virtuais,espionagem e o impacto da tecnologia nasrelações internacionais.
                     </p>
-                   
-                        <a class="botao">Assistir Agora</a>
-                    
+
+                    <a class="botao">Assistir Agora</a>
+
                 </div>
 
                 <div class="detalhes">
                     <p>Categoria: Hacker e Cibersegurança</p>
                     <p>Nota de 0 a 5: <span id="media8" class="media"> 4.6 </span></p>
                     <p>Avalie Aqui:
-                        <select id="ipt_nota">
+                        <select id="ipt_nota8">
                             <option selected disabled>Selecione</option>
                             <option value="1">1 estrela</option>
                             <option value="2">2 estrelas</option>
@@ -353,8 +380,10 @@
                             <option value="5">5 estrelas</option>
                         </select>
 
-                        <p>Enviar avaliação: <button class="button_eviar" onclick="enviarNota(8)">Encaminhar</button></p>
+                    <p>Enviar avaliação: <button class="button_eviar"
+                            onclick="enviarNota(Number(ipt_nota8.value), 8)">Encaminhar</button></p>
                     </p>
+
                 </div>
             </div>
         </div>
@@ -387,13 +416,97 @@
     </footer>
 
 </body>
-</html>
-<script>
-    function enviarNota(filme) {
-        let nota = Number(ipt_nota.value);
-        let click = filme;
-        
 
+</html>
+<script src="../js/sessao.js"></script>
+
+<script>
+    function enviarNota(notaUser, idDoPoster) {
+        var idUser = sessionStorage.ID_user;
+
+        fetch("/insight/inserir", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuario: idUser,
+                notaUser: notaUser,
+                posterId: idDoPoster,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("Status da resposta:", resposta.status);
+
+                if (resposta.ok) {
+                    // Tudo certo (status 200 a 299, inclusive 201)
+                    return resposta.text(); // pega o texto da resposta
+                } else {
+                    // Status 400, 500 etc — ainda é uma resposta do servidor, mas com erro
+                    return resposta.text().then(function (textoErro) {
+                        throw new Error("Erro do servidor: " + textoErro);
+                    });
+                }
+            })
+            .then(function (mensagem) {
+                console.log("Mensagem do servidor:", mensagem);
+                posterMedia(idDoPoster) // media
+
+                mensagem_erro.innerHTML = "Poste avaliado com sucesso...";
+                cardErro.style.display = "flex";
+
+                setInterval(() => {
+                    finalizarAtualizar()
+                }, 3000);
+            })
+            .catch(function (erro) {
+                console.error("Erro na requisição:", erro.message);
+
+                mensagem_erro.innerHTML = "Somente uma avaliação por poster";
+                cardErro.style.display = "flex";
+
+                setInterval(() => {
+                    finalizarAtualizar()
+                }, 4000);
+            });
+    }
+
+    function posterMedia() {
+
+        function posterMedia(idDoPoster) {
+            fetch(`/insight/listar?posterId=${idDoPoster}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then(function (resposta) {
+                    console.log("Status da resposta:", resposta.status);
+
+                    if (resposta.ok) {
+                        return resposta.json(); // pega o resultado da média
+
+                    } else {
+                        return resposta.text().then(function (textoErro) {
+                            throw new Error("Erro do servidor: " + textoErro);
+                        });
+                    }
+                })
+                .then(function (media) {
+                    console.log("Nova média recebida:", media);
+                    // atualizar o valor da antiga media com a nova.
+                    document.getElementById(`media${idDoPoster}`).innerText = media;
+                })
+                .catch(function (erro) {
+                    console.error("Erro na requisição:", erro.message);
+                    mensagem_erro.innerHTML = "Erro ao buscar média";
+                    cardErro.style.display = "flex";
+
+                    setInterval(() => {
+                        finalizarAtualizar();
+                    }, 4000);
+                });
+        }
 
     }
 </script>
