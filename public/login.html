@@ -141,6 +141,7 @@
                     console.log(JSON.stringify(json));
 
                     //salvando dados
+                    sessionStorage.ID_user = json.id
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.APELIDO_USUARIO = json.apelido;
