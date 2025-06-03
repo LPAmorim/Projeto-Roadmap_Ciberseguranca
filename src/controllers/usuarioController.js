@@ -16,6 +16,7 @@ function autenticar(req, res) {
 
         if (resultado.length === 1) {
           const user = resultado[0];
+
           return res.json({
             id: user.id,
             email: user.email,
@@ -23,7 +24,8 @@ function autenticar(req, res) {
             senha: user.senha,
             apelido: user.apelido,
           });
-        } else if (resultado.length === 0) { // corrigido: resultadoAutenticar -> resultado
+          
+        } else if (resultado.length === 0) {
           res.status(403).send("Login ou senha inválido(s)");
         } else {
           res.status(403).send("Mais de um usuário com o mesmo login!");
