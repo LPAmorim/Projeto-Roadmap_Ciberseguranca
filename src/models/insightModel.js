@@ -14,18 +14,32 @@ function listarMediaPoster(posterId) {
   var instrucaoSql = `
   SELECT ROUND(AVG(nota), 1) AS media FROM insight WHERE fkfilmes_series = ${posterId};
   `;
+
+  console.log("Executando SQL:", instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
 function verificarPosterListar(idUsuario, posterId) {
   var instrucaoSql = `
-  SELECT fkuser, fkfilmes_series FROM insight where fkuser = ${idUsuario} AND fkfilmes_series ${posterId};
-  `;
+  SELECT fkuser, fkfilmes_series FROM insight where fkuser = ${idUsuario} AND fkfilmes_series = ${posterId}`;
+
+  console.log("Executando SQL:", instrucaoSql);
   return database.executar(instrucaoSql);
+}
+
+function buscarMediaEmTodosOsPoster() {
+   var instrucaoSql = `
+  SELECT fkfilmes_series AS posterId, ROUND(AVG(nota), 1) AS media FROM insight GROUP BY fkfilmes_series;
+`
+  console.log("Executando SQL:", instrucaoSql);
+  return database.executar(instrucaoSql).catch(erro => {
+    console.error("Erro ao executar SQL:", erro);
+    throw erro});
 }
 
 module.exports = {
   inserirNotaPessoal,
   listarMediaPoster,
-  verificarPosterListar
+  verificarPosterListar,
+  buscarMediaEmTodosOsPoster,
 }

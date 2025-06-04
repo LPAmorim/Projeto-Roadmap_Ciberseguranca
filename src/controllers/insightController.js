@@ -1,57 +1,37 @@
 var insightModel = require("../models/insightModel");
 
-function buscarInsightPorUsuario(req, res) {
-  var idUsuario = req.params.idUsuario;
-
-  insightModel.buscarInsightPorUsuario(idUsuario)
-    .then((resultado) => {
-      if (resultado.length > 0) {
-        res.status(200).json(resultado);
-      } else {
-        res.status(204).json(['sem dados']);
-      }
-    })
-    .catch(function (erro) {
-      console.log("Erro ao buscar insights:", erro);
-      res.status(500).json(erro.sqlMessage);
-    });
-}
-
 function inserirNota(req, res) {
   const { idUsuario, notaUser, posterId } = req.body;
 
   if (!idUsuario || !posterId || notaUser == null) {
     return res.status(400).send("Campos obrigatórios faltando!");
+  }
 
-  } else {
-
-    insightModel.verificarPosterListar(idUsuario, posterId)
-      .then(poster => {
-
-        for (i = 0; i < poster.length; i++) {
-          const vericacao = poster[i];
-
-          if (vericacao.id === idUsuario && vericacao.poster) {
-            let mensagem = "Poster já avaliado";
-
-            return res.status(410).send(mensagem);
-          }
-        }
-
+  insightModel.verificarPosterListar(idUsuario, posterId)
+    .then(poster => {
+      if (!poster) {
+        throw { status: 410, message: "Poster já avaliado" };
+      } else {
         return insightModel.inserirNotaPessoal(idUsuario, posterId, notaUser);
-      })
-      .then(() => {
-        res.status(201).send("Nota inserida com sucesso.");
-      })
-      .catch((erro) => {
+      }
+
+    })
+    .then(() => {
+      res.status(201).send("Nota inserida com sucesso.");
+    })
+    .catch((erro) => {
+      if (erro.status) {
+        res.status(erro.status).send(erro.message);
+      } else {
         console.error("Erro ao inserir nota:", erro);
         res.status(500).json(erro.sqlMessage || erro.message);
-      });
-  }
+      }
+    });
 }
 
+
 function listaMediaPorPoster(req, res) {
-  const posterId = req.query.posterId;
+  let posterId = req.query.posterId;
 
   if (!posterId) {
     return res.status(400).send("Campos obrigatórios faltando!");
@@ -71,8 +51,26 @@ function listaMediaPorPoster(req, res) {
     });
 }
 
+function atualizarPoster(req, res) {
+  insightModel.buscarMediaEmTodosOsPoster()
+    .then(resultado => {
+      if (!resultado || resultado.length === 0) { // if só uma verificação padrão 
+        res.status(404).send("Poster não encontrado ou sem avaliações.");
+
+      } else {
+        res.status(200).json(resultado); // Retorna o como json
+      }
+    })
+    .catch((erro) => {
+      console.log(`Erro ao achar `, erro);
+      console.error("Erro na rota /insight/poster:", erro);
+
+      res.status(500).json(erro.sqlMessage || erro.message);
+    });
+}
+
 module.exports = {
-  buscarInsightPorUsuario,
   inserirNota,
-  listaMediaPorPoster
+  listaMediaPorPoster,
+  atualizarPoster
 };
