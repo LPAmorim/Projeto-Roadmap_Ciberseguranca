@@ -57,7 +57,7 @@ header {
 
 .logo {
   height: 100px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 5px 5px #000000;
   border-radius: 3px;
 }
 
@@ -104,7 +104,7 @@ nav a:hover {
   width: 70%;
   border-radius: 80px;
   z-index: 1;
-  box-shadow: 7px 5px #222;
+  box-shadow: 8px 4px 10px #222;
 }
 
 .b_usuario-name {
@@ -136,7 +136,7 @@ nav a:hover {
 
 .intro-roadmap {
   background-color: #090909;
-  box-shadow: 10px 12px #000000;
+  box-shadow: 8px 10px 10px #000000;
   border-radius: 50px;
   height: 430px;
   align-content: center;
@@ -182,7 +182,7 @@ nav a:hover {
 
 .mapa-mental {
   background-color: #1f1f1f;
-  box-shadow: 10px 10px #000000;
+  box-shadow: 8px 10px 10px #000000;
   border-radius: 30px;
   border: 1px solid #b084f8;
   align-content: center;
@@ -199,7 +199,7 @@ nav a:hover {
 
 .cascata {
   background-color: #1f1f1f;
-  box-shadow: 10px 10px #000000;
+  box-shadow: 8px 10px 10px #000000;
   border-radius: 30px;
   border: 1px solid #b084f8;
   align-content: center;
@@ -237,7 +237,7 @@ nav a:hover {
   border-radius: 30px;
   border: 2px solid #b084f8;
   padding: 10px;
-  box-shadow: 10px 10px #000000;
+  box-shadow: 8px 10px 10px #000000;
 }
 
 .caminho-hacker a {
@@ -384,7 +384,7 @@ nav a:hover {
   background-color: #1f1f1f;
   padding: 2rem;
   border-radius: 40px;
-  box-shadow: 12px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 10px 10px #000000;
 }
 
 
@@ -475,7 +475,7 @@ nav a:hover {
   background-color: #16161a;
   border: 2px solid #7256c8;
   text-align: center;
-  box-shadow: 12px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 10px 10px #000000;
   padding: 15px;
 }
 .recomendacao > h3 {

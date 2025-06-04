@@ -84,8 +84,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt3173594/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Hacker%253A%2520Todo%2520crime%2520tem%2520um%2520in%25C3%25AD">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt3173594/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Hacker%253A%2520Todo%2520crime%2520tem%2520um%2520in%25C3%25AD">Saiba mais</a>
 
                 </div>
 
@@ -130,8 +129,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt4158110/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_mr">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt4158110/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_mr">Saiba mais</a>
 
                 </div>
 
@@ -172,8 +170,7 @@
                         privacidade,ética e segurança nacional.
                     </p>
 
-                    <a class="botao" href="https://www.imdb.com/pt/title/tt3774114/?ref_=fn_all_ttl_1">Assistir
-                        Agora</a>
+                    <a class="botao" href="https://www.imdb.com/pt/title/tt3774114/?ref_=fn_all_ttl_1">Saiba mais</a>
 
                 </div>
 
@@ -214,8 +211,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt3042408/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Invasores%2520%25E2%2580%2593%2520Nenhum%2520Sistema%2520Est">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt3042408/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Invasores%2520%25E2%2580%2593%2520Nenhum%2520Sistema%2520Est">Saiba mais</a>
 
                 </div>
 
@@ -258,7 +254,7 @@
                         filosofiae crítica social sobre tecnologia e liberdade.
                     </p>
 
-                    <a class="botao" href="https://www.imdb.com/pt/title/tt0133093/">Assistir Agora</a>
+                    <a class="botao" href="https://www.imdb.com/pt/title/tt0133093/">Saiba mais</a>
 
                 </div>
 
@@ -300,8 +296,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt2084970/?ref_=nv_sr_srsg_2_tt_8_nm_0_in_0_q_O%2520jogo%2520da%2520">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt2084970/?ref_=nv_sr_srsg_2_tt_8_nm_0_in_0_q_O%2520jogo%2520da%2520">Saiba mais</a>
 
                 </div>
 
@@ -341,8 +336,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt2085059/?ref_=nv_sr_srsg_4_tt_2_nm_5_in_0_q_black%2520">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt2085059/?ref_=nv_sr_srsg_4_tt_2_nm_5_in_0_q_black%2520">Saiba mais</a>
 
                 </div>
 
@@ -383,8 +377,7 @@
                     </p>
 
                     <a class="botao"
-                        href="https://www.imdb.com/pt/title/tt2717822/?reasonForLanguagePrompt=browser_header_mismatch">Assistir
-                        Agora</a>
+                        href="https://www.imdb.com/pt/title/tt2717822/?reasonForLanguagePrompt=browser_header_mismatch">Saiba mais</a>
 
                 </div>
 
@@ -469,7 +462,7 @@
                 } else {
                     // Status 400, 500 etc — ainda é uma resposta do servidor, mas com erro
                     return resposta.text().then(function (textoErro) {
-                        throw new Error("Erro do servidor: " + textoErro);
+                        throw ("Erro do servidor: " + textoErro);
                     });
                 }
             })
@@ -512,7 +505,7 @@
 
                 } else {
                     return resposta.text().then(function (textoErro) {
-                        throw new Error("Erro do servidor: " + textoErro);
+                        throw ("Erro do servidor: " + textoErro);
                     });
                 }
             })
@@ -548,7 +541,7 @@
                 } else {
                     return res.text().then(texto => {
                         console.error("Erro do servidor:", texto);
-                        return Promise.reject("Erro do servidor");
+                        throw ("Erro do servidor");
                     });
 
                 }

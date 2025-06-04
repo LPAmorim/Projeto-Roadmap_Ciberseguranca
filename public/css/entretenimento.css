@@ -8,7 +8,7 @@
   font-family: "Roboto", arial;
   scroll-behavior: smooth;
   /*rolagem suave*/
-  
+
   ::-webkit-scrollbar {
     width: 20px;
   }
@@ -20,7 +20,7 @@
   ::-webkit-scrollbar-thumb {
     background-color: #7d28d9;
     border-radius: 70px;
-}
+  }
 }
 
 body {
@@ -57,7 +57,7 @@ header {
 
 .logo {
   height: 100px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 5px 5px #000000;
   border-radius: 3px;
 }
 
@@ -104,7 +104,7 @@ nav a:hover {
   width: 70%;
   border-radius: 80px;
   z-index: 1;
-  box-shadow: 7px 5px #222;
+  box-shadow: 8px 4px 10px #222;
 }
 
 .b_usuario-name {
@@ -190,7 +190,7 @@ p {
   align-content: center;
   max-width: 100%;
   border-radius: 12px;
-  box-shadow: 10px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 10px 10px #000000;
 }
 
 /* Frase bíblica */
@@ -284,97 +284,100 @@ footer {
   padding: 1rem 4rem;
 }
 
- .card {
-      display: flex;
-      background-color: #222;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 900px;
-      justify-self: center;
-      box-shadow: 0 4px 12px #000000;
-    }
+.card {
+  display: flex;
+  background-color: #222;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  justify-self: center;
+  box-shadow: 8px 10px 10px #000000;
+}
 
-    .posters {
-     height: 550px;
-    }
+.posters {
+  height: 550px;
+}
 
-    .posters > img {
-      border-radius: 12px 0 0 12px;
-    }
+.posters>img {
+  border-radius: 12px 0 0 12px;
+}
 
-    .posters img {
-      width: 100%;
-      height: 100%;
-    }
+.posters img {
+  width: 100%;
+  height: 100%;
+}
 
-    .info-card {
-      flex: 1;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
+.info-card {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-    .info-card h2 {
-      margin: 0 0 0.5rem;
-      color: #ccc;
-    }
+.info-card h2 {
+  margin: 0 0 0.5rem;
+  color: #ccc;
+}
 
-    .info-card p {
-      color: #ccc;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
+.info-card p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 
-    .media {
-      color: #7256c8;
-      font-size: 1.1rem;
-    }
+.media {
+  color: #7256c8;
+  font-size: 1.1rem;
+}
 
-    .botao {
-      background-color: #7256c8;
-      color: white;
-      border: 1px solid #cccccc;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+.botao {
+  background-color: #7256c8;
+  color: white;
+  border: 1px solid #cccccc;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
 
-    .botao:hover {
-      background-color: #6d28d9;
-    }
+}
 
-    .detalhes {
-      font-size: 1rem;
-      margin-top: 1.5rem;
-    }
+.botao:hover {
+  background-color: #6d28d9;
+  text-decoration: underline;
+}
 
-    select {
-      background-color: #2a2a2a;
-      color: white;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 0.4rem;
-      margin-left: 0.5rem;
-    }
+.detalhes {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
 
-    .button_eviar {
-      background-color: #7256c8;
-      color: white;
-      border: 1px solid #cccccc;
-      padding: 5px;
-      font-size: 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-left: 15px;
-    }
+select {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+}
 
-    .button_eviar:hover {
-      background-color: #6d28d9;
-    }
+.button_eviar {
+  background-color: #7256c8;
+  color: white;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 15px;
+}
 
-    /* alertas error */
+.button_eviar:hover {
+  background-color: #6d28d9;
+}
+
+/* alertas error */
 .alerta_erro {
   display: flex;
   justify-content: flex-start;
