@@ -11,20 +11,20 @@
   <script src="../js/sessao.js"></script>
 </head>
 
-<body onload="validarSessao()">
+<body>
   <header>
     <div class="container">
       <div class="header-container">
-        <a href="index.html"><img class="logo" src="../assets/icon/Logan.png" alt="Logo Roadmap Cibersegurança" /></a>
+        <a href="./index.html"><img class="logo" src="../assets/icon/Logan.png" alt="Logo Roadmap Cibersegurança" /></a>
         <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
       </div>
 
       <nav>
         <ul>
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a class="atual" href="#">Roadmap</a></li>
           <li><a href="./entretenimento.html">Entretenimento</a></li>
-          <li><a href="login.html">Insights</a></li>
+          <li><a href="./insight.html">Insights</a></li>
           <li><a class="sair" onclick="limparSessao()">Sair</a></li>
         </ul>
       </nav>
@@ -232,7 +232,8 @@
         </li>
       </ol>
 
-      <small class="observacao">Obs: Praticar com exercícios e projetos é essencial para aprender a resolver erros — sem colocar a mão na
+      <small class="observacao">Obs: Praticar com exercícios e projetos é essencial para aprender a resolver erros — sem
+        colocar a mão na
         massa, teoria não serve pra muita coisa.</small>
     </div>
 
@@ -350,7 +351,8 @@
       <h3>Recomendações</h3>
 
       <a href="https://drive.google.com/file/d/1HFYOWbbKijHTTb8VyRruGF1IKjyRZ9Bo/view?usp=sharing">Cursos</a>
-      <a href="https://drive.google.com/file/d/1-qMcZVuDdKno8hYnWk3Ib4ZvOhbtlaEL/view?usp=sharing">Certificações e Sites</a>
+      <a href="https://drive.google.com/file/d/1-qMcZVuDdKno8hYnWk3Ib4ZvOhbtlaEL/view?usp=sharing">Certificações e
+        Sites</a>
     </div>
 
   </div>
@@ -367,9 +369,8 @@
         <ul class="autoria">
           <a href="index.html">Home</a>
           <a href="roadmap.html">Roadmap</a>
-          <a href="login.html">Entretenimento</a>
-          <a href="login.html">Insights</a>
-          <a href="login.html">Login</a>
+          <a href="./entretenimento.html">Entretenimento</a>
+          <a href="./insight.html">Insights</a>
         </ul>
         <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
       </div>
@@ -386,6 +387,10 @@
 
 </html>
 <script>
+  window.onload = () => {
+    validarSessao()
+  };
+
   document.getElementById('escolhaTrilha').addEventListener('change', (event) => {
     let selectTrilhaCyber = escolhaTrilha.value;
 
@@ -398,7 +403,7 @@
         <li>Teste de Aplicação</li>
     `
     } else if (selectTrilhaCyber === 'B') {
-        Trilha.innerHTML = `
+      Trilha.innerHTML = `
         <li>Threat Intelligence (Inteligência deAmeaças)</li>
         <li>Segurança de Aplicações</li>
         <li>Monitoramento com SIEM</li>
@@ -407,7 +412,7 @@
         <li>Segurança em Nuvem</li>
     `
     } else if (selectTrilhaCyber === 'G') {
-        Trilha.innerHTML = `
+      Trilha.innerHTML = `
         <li>GRC (Governança, Risco eConformidades)</li>
         <li>LGP e Leis de Privacidade</li>
         <li>Normas como ISO 27001, NIST, COBIT</li>
