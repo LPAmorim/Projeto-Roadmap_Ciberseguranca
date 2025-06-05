@@ -216,64 +216,7 @@ p {
 /* Fim da section hero */
 
 
-
-/* Footer */
-
-footer {
-  display: flex;
-  background-color: #000000;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-.social {
-  margin-top: 1rem;
-  display: flex;
-  gap: 5rem;
-  text-align: center;
-}
-
-.container-social>ul {
-  margin-bottom: 15px;
-  justify-content: center;
-  font-weight: bolder;
-}
-
-.container-social>p {
-  font-size: 1.2rem;
-}
-
-.container-social ul:first-of-type a {
-  color: #6d28d9;
-  text-decoration: none;
-  font-size: large;
-}
-
-.container-social ul>a:hover {
-  color: #b084f8;
-  text-decoration: underline;
-}
-
-.container-social ul:nth-of-type(2) a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: large;
-}
-
-.container-social ul:nth-of-type(2) a:hover {
-  color: #b084f8;
-  text-decoration: underline;
-}
-
-.author {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Fim do Footer */
-
+/* Inicio dos posters*/
 .conteiner-cards {
   width: 100%;
   background-color: #0f0f0f;
@@ -376,6 +319,8 @@ select {
 .button_eviar:hover {
   background-color: #6d28d9;
 }
+/* posters fim*/
+
 
 /* alertas error */
 .alerta_erro {
@@ -400,3 +345,60 @@ select {
   font-weight: 500;
   font-size: 20px;
 }
+
+/* Footer */
+
+footer {
+  display: flex;
+  background-color: #000000;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 5rem;
+  text-align: center;
+}
+
+.container-social>ul {
+  margin-bottom: 15px;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.container-social>p {
+  font-size: 1.2rem;
+}
+
+.container-social ul:first-of-type a {
+  color: #6d28d9;
+  text-decoration: none;
+  font-size: large;
+}
+
+.container-social ul>a:hover {
+  color: #b084f8;
+  text-decoration: underline;
+}
+
+.container-social ul:nth-of-type(2) a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: large;
+}
+
+.container-social ul:nth-of-type(2) a:hover {
+  color: #b084f8;
+  text-decoration: underline;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Fim do Footer */
