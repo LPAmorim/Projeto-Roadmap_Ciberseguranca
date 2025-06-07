@@ -36,3 +36,9 @@ function finalizarAguardar(texto) {
 function finalizarAtualizar() {
     cardErro.style.display = "none";
 }
+
+function iniciarQuizz() {
+    window.location = () => {
+        '../roadmap/quiz.html'
+    }
+}
