@@ -69,8 +69,29 @@ function atualizarPoster(req, res) {
     });
 }
 
+function buscarAvaliacoes(req, res) {
+  insightModel.buscarAvaliacoes()
+  .then(comunidade => {
+
+    if(comunidade) {
+      res.status(200).json(comunidade);
+    
+    } else {
+      res.status(401).send("Avaliações não foram encontrada");
+    }
+    
+  })
+  .catch(erro => {
+    console.log('Erro ao achar ', erro);
+    console.error("Erro na rota /insight/buscarAvaliacoes: ", erro);
+
+    res.status(500).json(erro.sqlMessage || erro.message);
+  });
+}
+
 module.exports = {
   inserirNota,
   listaMediaPorPoster,
-  atualizarPoster
+  atualizarPoster,
+  buscarAvaliacoes
 };

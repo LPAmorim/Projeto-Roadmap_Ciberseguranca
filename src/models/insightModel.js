@@ -28,13 +28,24 @@ function verificarPosterListar(idUsuario, posterId) {
 }
 
 function buscarMediaEmTodosOsPoster() {
-   var instrucaoSql = `
+  var instrucaoSql = `
   SELECT fkfilmes_series AS posterId, ROUND(AVG(nota), 1) AS media FROM insight GROUP BY fkfilmes_series;
-`
+  `
+  
   console.log("Executando SQL:", instrucaoSql);
-  return database.executar(instrucaoSql).catch(erro => {
-    console.error("Erro ao executar SQL:", erro);
-    throw erro});
+  return database.executar(instrucaoSql);
+}
+
+function buscarAvaliacoes() {
+  var instrucaoSql = `
+  SELECT fil.titulo as poster, ROUND(AVG(ins.nota), 1) as media, COUNT(users.id) as users from insight ins
+  INNER join filmes_series fil on fil.id = ins.fkfilmes_series
+  INNER JOIN users on users.id =  ins.fkuser
+  GROUP BY fil.titulo;
+  `;
+  
+  console.log("Executando SQL:", instrucaoSql);
+  return database.executar(instrucaoSql);
 }
 
 module.exports = {
@@ -42,4 +53,5 @@ module.exports = {
   listarMediaPoster,
   verificarPosterListar,
   buscarMediaEmTodosOsPoster,
+  buscarAvaliacoes
 }

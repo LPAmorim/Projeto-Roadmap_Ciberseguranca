@@ -15,4 +15,7 @@ router.get("/poster", function (req, res) {
   insightController.atualizarPoster(req, res);
 });
 
+router.get("/buscarAvaliacoes", function (req, res) {
+  insightController.buscarAvaliacoes(req, res);
+})
 module.exports = router;

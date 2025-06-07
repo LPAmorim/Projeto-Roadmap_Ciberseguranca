@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap Cibersegurança</title>
+
+    <link rel="stylesheet" href="../css/insight.css" />
+    <link rel="icon" href="../public/assets/icon/Logan.png">
+    <script src="../js/sessao.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="./index.html"><img class="logo" src="../assets/icon/Logan.png"
+                        alt="Logo Roadmap Cibersegurança" /></a>
+                <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./roadmap.html">Roadmap</a></li>
+                    <li><a href="./entretenimento.html">Entretenimento</a></li>
+                    <li><a class="atual" href="./insight.html">Insights</a></li>
+                    <li><a class="sair" onclick="limparSessao()">Sair</a></li>
+                </ul>
+            </nav>
+            <div class="container-login">
+                <img class="perfil-login" src="../assets/icon/Icone de Perfil padrão.png">
+                <span class="b_usuario-name" id="b_usuario">dfghj</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="dash">
+        <h1 class="titulo">Poster de Avaliações: Filmes e Séries</h1>
+        <div class="container-dash">
+            <h3>Avaliações da Comunidade</h3>
+
+            <p>
+                Ao lado estão as médias de avaliação e o número depessoas que avaliaram cada filme relacionado à
+                seção de entretenimento. Esses dados são atualizados com base nas avaliações feitas por usuários
+                cadastrados na plataforma. Vejá os filmes/serie que estão em alta no momento.
+            </p>
+        </div>
+
+            <canvas id="myChart1"></canvas>
+
+            <p class="highlight">Dados atualizados em tempo real com base nas interações dos usuários</p>
+    </section>
+
+
+    <footer>
+        <div class="social">
+            <div class="container-social">
+                <ul>
+                    <a href="https://www.linkedin.com/in/LucasAmorim-lcxAmorim/">Linkedin</a>
+                    <a href="https://github.com/LPAmorim">GitHub</a>
+                    <a href="https://open.spotify.com/playlist/6quxUsvyvcCh60BZAWldWb?pi=4KZGO39iTuyqn">Spotify</a>
+                </ul>
+                <ul class="autoria">
+                    <a href="./index.html">Home</a>
+                    <a href="./roadmap.html">Roadmap</a>
+                    <a href="./entretenimento.html">Entretenimento</a>
+                    <a href="./insight.html">Insights</a>
+                </ul>
+                <p>&copy; 2025 LPAmorim. Desenvolvido por Lucas Pereira Amorim Santos. &#10013;</p>
+            </div>
+
+            <div class="author">
+                <a href="https://sptech.school/"><img src="/assets/icon/Logan-SPTech.png" alt="Logan-SPTech"></a>
+                <small>V1.0.0</small>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/charjs.js"></script>
+
+<script>
+    window.onload = () => {
+        validarSessao(),
+        listandoAvaliacaoNosPoster()
+    };
+
+    function listandoAvaliacaoNosPoster() {
+        fetch("/insight/buscarAvaliacoes")
+        .then(function (resposta) {
+            console.log("Status da resposta: ", resposta.status);
+
+            if (resposta.ok) {
+                console.log("peguei os valores");
+                return resposta.json();
+
+            } else {
+                return resposta.text().then(function (textErro) {
+                    throw ("Erro do servidor: " + textErro);
+                });
+            }
+        })
+        .then(function (comunidade) {
+            console.log("Json avaliação comunidade rebebida: " + comunidade);
+            console.log(comunidade);
+            atualizarGrafico(comunidade);
+        })
+        .catch(function (erro) {
+            console.erro("Erro na requisição: ", erro.message);
+        })
+    }
+</script>
