@@ -17,7 +17,7 @@
             <div class="header-container">
                 <a href="./index.html"><img class="logo" src="../assets/icon/Logan.png"
                         alt="Logo Roadmap Cibersegurança" /></a>
-                <h1 class="titulo">ROADMAP<br>CIBERSEGURANÇA</h1>
+                <h1 class="titulo" style="text-align: start;">ROADMAP<br>CIBERSEGURANÇA</h1>
             </div>
 
             <nav>
@@ -36,6 +36,44 @@
         </div>
     </header>
 
+    <section class="softSkill">
+
+        <canvas id="radar_skill"></canvas>
+
+        <div class="container_ficha">
+            <div class="ficha_tecnica">
+                <h3>Ficha Técnica</h3>
+                <hr style="margin-bottom: 10px;">
+
+                <p><span>Nome: </span><span class="font" id="span_nome">Nenhum dado encontrado.</span></p>
+
+                <p><span>E-mail: </span><span class="font" id="span_email">Nenhum dado encontrado.</span></p>
+
+                <p><span>Data do Quiz: </span><span class="font" id="span_data">Nenhum dado encontrado.</span></p>
+
+                <p><span>Classe: </span><span class="destaque" id="span_classe">Nenhum dado encontrado.</span></p>
+
+                <p><span>Pontuação: </span><span class="font" id="span_pontuacao">Nenhum dado encontrado.</span></p>
+
+                <p><span>Rank: </span><span class="destaque" id="span_rank">Nenhum dado encontrado.</span></p>
+            </div>
+
+            <div class="recomendacao">
+                <h3>Analise do Quiz</h3>
+                <hr style="margin-bottom: 10px;">
+
+                <p><span>FeedBack: </span>
+                <p id="feedback" class="feedback">Realize o Quizz para obter o feedback.</p>
+                </p>
+
+                
+            </div>
+            <button class="quizz" onclick="iniciarQuizz()">Iniciar Quizz</button>
+        </div>
+
+        <p>Observação: Só e possivel fazer uma tentativa do <span style="font-size: 16px;" class="destaque">Quizz!</span></p>
+    </section>
+
     <section class="dash">
         <h1 class="titulo">Poster de Avaliações: Filmes e Séries</h1>
         <div class="container-dash">
@@ -48,11 +86,10 @@
             </p>
         </div>
 
-            <canvas id="myChart1"></canvas>
+        <canvas id="myChart1"></canvas>
 
-            <p class="highlight">Dados atualizados em tempo real com base nas interações dos usuários</p>
+        <p class="highlight">Dados atualizados em tempo real com base nas interações dos usuários</p>
     </section>
-
 
     <footer>
         <div class="social">
@@ -88,31 +125,66 @@
 <script>
     window.onload = () => {
         validarSessao(),
-        listandoAvaliacaoNosPoster()
+            listandoAvaliacaoNosPoster(),
+            graficoRadar()
     };
+
+    const usuario = sessionStorage.NOME_USUARIO;
+    const email = sessionStorage.EMAIL_USUARIO;
+
+    let spanNome = span_nome;
+    let spanEmail = span_email;
+
+    spanNome.innerHTML = usuario;
+    spanEmail.innerHTML= email;
+    
+    function listandoResultadoDoQuiz() {
+        fetch("/insight/buscarAvaliacoes")
+            .then(function (resposta) {
+                console.log("Status da resposta: ", resposta.status);
+
+                if (resposta.ok) {
+                    console.log("peguei os valores");
+                    return resposta.json();
+
+                } else {
+                    return resposta.text().then(function (textErro) {
+                        throw ("Erro do servidor: " + textErro);
+                    });
+                }
+            })
+            .then(function (softSkill) {
+                console.log("Json avaliação comunidade rebebida: " + softSkill);
+                console.log(softSkill);
+                graficoRadar(softSkill);
+            })
+            .catch(function (erro) {
+                console.erro("Erro na requisição: ", erro.message);
+            })
+    }
 
     function listandoAvaliacaoNosPoster() {
         fetch("/insight/buscarAvaliacoes")
-        .then(function (resposta) {
-            console.log("Status da resposta: ", resposta.status);
+            .then(function (resposta) {
+                console.log("Status da resposta: ", resposta.status);
 
-            if (resposta.ok) {
-                console.log("peguei os valores");
-                return resposta.json();
+                if (resposta.ok) {
+                    console.log("peguei os valores");
+                    return resposta.json();
 
-            } else {
-                return resposta.text().then(function (textErro) {
-                    throw ("Erro do servidor: " + textErro);
-                });
-            }
-        })
-        .then(function (comunidade) {
-            console.log("Json avaliação comunidade rebebida: " + comunidade);
-            console.log(comunidade);
-            atualizarGrafico(comunidade);
-        })
-        .catch(function (erro) {
-            console.erro("Erro na requisição: ", erro.message);
-        })
+                } else {
+                    return resposta.text().then(function (textErro) {
+                        throw ("Erro do servidor: " + textErro);
+                    });
+                }
+            })
+            .then(function (comunidade) {
+                console.log("Json avaliação comunidade rebebida: " + comunidade);
+                console.log(comunidade);
+                GraficoMediaPoster(comunidade);
+            })
+            .catch(function (erro) {
+                console.erro("Erro na requisição: ", erro.message);
+            })
     }
 </script>
