@@ -33,7 +33,6 @@ function criarGrafico(tipo, dados, labels, labelDoDataset, cores) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
       color: '#ffffff',
       scales: {
         x: {
@@ -71,18 +70,18 @@ function criarGrafico(tipo, dados, labels, labelDoDataset, cores) {
               if (modoAtual === 'linha') {
                 const index = context.dataIndex;
                 const item = cyber[index];
-                return `Salário Máximo: R$ ${item.salario[1].toLocaleString('pt-BR')}`;
+                return `Salário Máximo: R$ ${item.salario[1]}`;
               } else {
                 const valor = context.raw;
                 const label = context.label;
-                return `${label}: R$ ${valor.toLocaleString('pt-BR')}`;
+                return `${label}: R$ ${valor}`;
               }
             },
             title: function (tooltipItems) {
               if (modoAtual === 'linha') {
                 const index = tooltipItems[0].dataIndex;
                 const item = cyber[index];
-                return `${item.area}\nSalário Mínimo: R$ ${item.salario[0].toLocaleString('pt-BR')}`;
+                return `${item.area}\nSalário Mínimo: R$ ${item.salario[0]}`;
               } else {
                 return `${cyber[indexAtual].area}`;
               }
@@ -95,16 +94,16 @@ function criarGrafico(tipo, dados, labels, labelDoDataset, cores) {
 }
 
 // Gráfico inicial (linha)
-const labels = cyber.map(item => item.area);
+const labels = cyber.map(item => item.area); // novo array
 const maxSalarios = cyber.map(item => item.salario[1]);
 criarGrafico('line', maxSalarios, labels, 'Salário Máximo', 'rgb(109, 40, 217)');
 
 
 // Quando o usuário muda a área de atuação
 document.getElementById('areasDaCiber').addEventListener('change', function () {
-  const selectAtuacao = parseInt(this.value) - 1;
+  const selectAtuacao = parseInt(this.value) - 1; // vai pegar o event do select como onchange
 
-  if (!isNaN(selectAtuacao) && cyber[selectAtuacao]) {
+  if (selectAtuacao !== 'Text' && cyber[selectAtuacao]) {
     const faixa = cyber[selectAtuacao].salario;
     indexAtual = selectAtuacao;
     modoAtual = 'barra';
@@ -114,7 +113,89 @@ document.getElementById('areasDaCiber').addEventListener('change', function () {
       faixa,
       ['Salário Mínimo', 'Salário Máximo'],
       `Faixa Salarial - ${cyber[selectAtuacao].area}`,
-      ['#9333ea', '#8b5cf6']
+      ['#483681', '#7d28d9']
     );
   }
 });
+
+
+function atualizarGrafico(comunidade) {
+
+  const dash = document.getElementById('myChart1').getContext('2d');
+  // const comunidade = [
+  //   { poster: 'Hacker 1', media: 2, users: 3 },
+  //   { poster: 'Hacker 2', media: 3, users: 3 },
+  //   { poster: 'Hacker 3', media: 5, users: 3 },
+  //   { poster: 'Hacker 4', media: 4, users: 3 },
+  //   { poster: 'Hacker 5', media: 8, users: 3 },
+  //   { poster: 'Hacker 6', media: 7, users: 3 },
+  //   { poster: 'Hacker 7', media: 6, users: 3 },
+  //   { poster: 'Hacker 8', media: 2, users: 3 }
+  // ];
+
+  // Novo grafico da page insight
+  const labelsPoster = comunidade.map(item => item.poster);
+  const media = comunidade.map(item => item.media);
+  const quantosUsersAvaliaram = comunidade.map(item => item.users);
+  
+  grafico = new Chart(dash, {
+    type: 'bar',
+    data: {
+      labels: labelsPoster,
+      datasets: [{
+        label: "Média de Avaliações",
+        data: media,
+        backgroundColor: '#483681',
+        borderColor: '#6d28d9',
+        borderRadius: 100,
+        barThickness: 30,
+      },
+      {
+        label: "Quantos Usuarios Avaliaram",
+        data: quantosUsersAvaliaram,
+        backgroundColor: '#cccc',
+        borderColor: '#6d28d9',
+        borderRadius: 10,
+        barThickness: 30,
+      }]
+    },
+    options: {
+      responsive: true,
+      color: '#ffffff',
+      scales: {
+        x: {
+          ticks: {
+            color: '#ffffff',
+            font: {
+              weight: 'bold',
+              size: 14
+            }
+          },
+          grid: {
+            color: '#222'
+          }
+        },
+        y: {
+          ticks: {
+            color: '#ffffff',
+            font: {
+              weight: 'bold',
+              size: 14
+            }
+          },
+          grid: {
+            color: '#000000'
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          titleColor: '#ffffff',
+          bodyColor: '#b084f8',
+          backgroundColor: '#111111',
+          borderColor: '#6d28d9',
+        }
+      }
+    }
+  });
+}
