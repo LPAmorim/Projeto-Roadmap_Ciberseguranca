@@ -56,7 +56,7 @@ ALTER TABLE filmes_series AUTO_INCREMENT = 1
 
 
 
-
+ SELECT id, nome, apelido, email, senha FROM users WHERE (email = '' OR 1=1 order by 1) -- "' or apelido = '' OR 1=1 order by 1) -- "') AND senha = 'ASD';\n` 
 
 
 

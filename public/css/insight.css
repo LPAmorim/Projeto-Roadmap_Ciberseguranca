@@ -1,121 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /*facilita o layout responsivo*/
-    font-family: "Roboto", arial;
-    scroll-behavior: smooth;
-    /*rolagem suave*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*facilita o layout responsivo*/
+  font-family: "Roboto", arial;
+  scroll-behavior: smooth;
+  /*rolagem suave*/
 
-    ::-webkit-scrollbar {
-        width: 20px;
-    }
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
 
-    ::-webkit-scrollbar-track {
-        background-color: #000000;
-    }
+  ::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: #7d28d9;
-        border-radius: 70px;
-    }
+  ::-webkit-scrollbar-thumb {
+    background-color: #7d28d9;
+    border-radius: 70px;
+  }
 }
 
 body {
-    color: #f0f0f0;
-    font-family: 'Roboto', arial;
-    line-height: 1.6;
+  color: #f0f0f0;
+  font-family: 'Roboto', arial;
+  line-height: 1.6;
 }
 
 header {
-    background-color: #090909;
-    border-bottom: 2px solid #222;
-    padding: 1rem 5rem;
+  background-color: #090909;
+  border-bottom: 2px solid #222;
+  padding: 1rem 5rem;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .header-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 
 .header-container h1 {
-    font-weight: lighter;
-    font-size: 25px;
-    align-self: center;
+  font-weight: lighter;
+  font-size: 25px;
+  align-self: center;
 }
 
 .logo {
-    height: 100px;
-    box-shadow: 8px 5px 5px #000000;
-    border-radius: 3px;
+  height: 100px;
+  box-shadow: 8px 5px 5px #000000;
+  border-radius: 3px;
 }
 
 ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
+  display: flex;
+  gap: 35px;
+  list-style: none;
 }
 
 nav {
-    display: flex;
-    justify-content: end;
-    flex-direction: row;
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
 }
 
 nav a,
 span {
-    color: #cccccc;
-    text-decoration: none;
-    font-size: 1.2rem;
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .atual {
-    color: #b084f8;
+  color: #b084f8;
 }
 
 nav a:hover {
-    color: #b084f8;
+  color: #b084f8;
 }
 
 .container-login {
-    position: relative;
-    /* posicionem em relação a ele */
-    width: 200px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  /* posicionem em relação a ele */
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .perfil-login {
-    position: absolute;
-    border: 1px solid #cccccc;
-    width: 70%;
-    border-radius: 80px;
-    z-index: 1;
-    box-shadow: 8px 4px 10px #222;
+  position: absolute;
+  border: 1px solid #cccccc;
+  width: 70%;
+  border-radius: 80px;
+  z-index: 1;
+  box-shadow: 8px 4px 10px #222;
 }
 
 .b_usuario-name {
-    position: absolute;
-    z-index: 2;
-    font-size: 15px;
-    top: 90px;
+  position: absolute;
+  z-index: 2;
+  font-size: 15px;
+  top: 90px;
 }
 
 .sair {
-    color: rgb(244, 31, 31);
+  color: rgb(244, 31, 31);
 }
 
 /* Fim da nav/header */
@@ -124,21 +124,21 @@ nav a:hover {
 
 .dash {
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-color: #0f0f0f;
-  display: grid;
-  grid-template-columns: 350px 1fr;
+  display: flex;
   padding: 1rem 4rem;
-  align-content: center;
   gap: 25px;
   border-bottom: 2px solid #222;
-  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-dash {
-  width: 100%;
-  height: fit-content;
-  padding: 10px; 
+  width: 300px;
+  height: 80%;
+  padding: 10px;
+  align-self: center;
 
   background-color: #222;
   border: 1px solid #b084f8;
@@ -155,6 +155,30 @@ nav a:hover {
   text-align: start;
   font-size: 1.1rem;
   margin-top: 10px;
+}
+
+canvas {
+  background-color: #222;
+  padding: 1rem;
+  max-width: 70%;
+  max-height: 80%;
+
+  border-radius: 20px;
+  box-shadow: 8px 10px 10px #000000;
+  align-self: center;
+  border: 1px solid #b084f8;
+}
+
+.highlight {
+  width: 100%;
+  text-align: center;
+  color: #cccc;
+}
+
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 /* Dashboard fim */
