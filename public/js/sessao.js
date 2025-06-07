@@ -39,6 +39,6 @@ function finalizarAtualizar() {
 
 function iniciarQuizz() {
     window.location = () => {
-        '../roadmap/quiz.html'
+        '../roadmap/quizz.html'
     }
 }
