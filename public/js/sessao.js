@@ -38,7 +38,5 @@ function finalizarAtualizar() {
 }
 
 function iniciarQuizz() {
-    window.location = () => {
-        '../roadmap/quizz.html'
-    }
+    window.location = "./quizz.html";
 }
