@@ -28,11 +28,11 @@ body {
 }
 
 .telaDeInicio {
+    display: block;
     width: 50%;
     height: 80%;
     background-color: #0f0f0f;
     color: white;
-    display: flex;
     justify-self: center;
     margin-top: 200px;
     padding: 20px;
@@ -47,43 +47,116 @@ body {
     gap: 10px;
 }
 
-.apresentacao > h1 {
+.apresentacao>h1 {
     text-align: center;
     font-size: 1.5rem;
 }
 
-.apresentacao > p {
+.apresentacao>p {
     color: #cccccc;
     font-size: 1rem;
 }
 
-.apresentacao > ul {
+.apresentacao>ul {
     margin-left: 30px;
 }
 
-.apresentacao p > i {
+.apresentacao p>i {
     margin-left: 140px;
     color: #b084f8;
     text-decoration: #ccc underline;
 }
 
-button {
-  margin-top: 25px;
-  padding: 5px;
-  width: 200px;
-  font-size: 20px;
-  background-color: #7d28d9;
-  border: 1px solid #cccccc;
-  border-radius: 20px;
-  color: white;
+.btn-inicio {
+    margin-top: 25px;
+    padding: 5px;
+    width: 200px;
+    font-size: 20px;
+    background-color: #7d28d9;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    color: white;
 
-  display: flex;
-  justify-self: center;
-  justify-content: center;
-  box-shadow: 0 5px 7px #6d28d9;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    box-shadow: 0 5px 7px #6d28d9;
 }
 
-button:hover {
-  color: black;
-  box-shadow: 0 5px 7px #b084f8;
+.btn-inicio:hover {
+    color: black;
+    box-shadow: 0 5px 7px #b084f8;
+}
+
+/* Quizz */
+
+
+.indexQuiz {
+    display: none;
+    width: 70%;
+    max-width: 80%;
+    height: fit-content;
+    background-color: #0f0f0f;
+    color: unset;    
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 8px 20px #7d28d9;
+    margin: 50px auto 0;
+}
+
+.indexQuiz > h1 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 20px;
+    color: #cccccc;
+}
+
+.quizz {
+    padding-top: 20px;
+}
+
+.quizz > h2 {
+    font-size: 1.4rem;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.btn {
+    color: white;
+    width: 100%;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 20px 0;
+    background-color: #6d28d9;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 5px 7px #000000;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover:not([disabled]) {
+    color: black;
+    box-shadow: 0 5px 7px #b084f8;
+    background-color: #7d28d9;
+}
+
+#proxima_questao {
+    color: white;
+    width: 20%;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    background-color: #16161a;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 0 5px 7px #6d28d9;
+    cursor: pointer;
+    transition: all 0.3s;
+    /* display: none; */
 }
