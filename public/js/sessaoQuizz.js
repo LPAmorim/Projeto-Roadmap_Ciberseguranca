@@ -14,12 +14,13 @@ function listandoJsonQuestoes(questoes) {
 
         {
             questao: q.questao,
-            alternativas: q.alternativas.split(","),
+            alternativas: q.alternativas.split(".,"),
             pontos: q.pontos.split(",").map(Number)
         }
     ));
+    console.log(json[0].pontos)
     quiz = json
-    console.log(json);
+    console.log(json[1].alternativas);
     iniciarQuizz()
     // // console.log(quizz[0].pontos[0], typeof quizz[0].pontos[0]);
     // for (i = 0; i < quizz[0].pontos.length; i++) {
@@ -50,12 +51,14 @@ let indexStyle = 0;
 function mostrarquestão() {
     let questaoDaVez = quiz[questaoDaVezIndex];
     let numumeroDaQuestao = questaoDaVezIndex + 1;
+    idQuestaoRespondida.push(numumeroDaQuestao);
     buttonQuestao.innerHTML = numumeroDaQuestao + '. ' + questaoDaVez.questao;
 
     questaoDaVez.alternativas.forEach((alternativa, index) => {
         const button = document.getElementById(`alternativas${index}`);
 
         if (button) {
+
             button.innerText = alternativa;
             button.onclick = () => {
                 document.getElementsByClassName(`btn${indexStyle}`)[0].style.backgroundColor = '#6d28d9';
@@ -81,7 +84,7 @@ function proximaQuestaoDoQuizz() {
         mostrarquestão();
         console.log(questaoDaVezIndex);
         console.log(pontuacao);
-        
+
     } else if (questaoDaVezIndex === 3) {
         questaoDaVezIndex += 1;
         pontuacao.push(SavePointPotuacao);
@@ -101,7 +104,5 @@ function proximaQuestaoDoQuizz() {
 function finalizarQuestionario() {
     idUser = sessionStorage.ID_user;
     inserindoResultadoQuiz(idUser, idQuestaoRespondida, pontuacao)
-
-    window.location = 'insight.html';
-
+    console.log(idUser, idQuestaoRespondida, pontuacao)
 }
