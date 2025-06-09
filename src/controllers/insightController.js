@@ -10,7 +10,7 @@ function inserirNota(req, res) {
   insightModel.verificarPosterListar(idUsuario, posterId)
     .then(poster => {
       if (!poster) {
-        throw { status: 410, message: "Poster já avaliado" };
+        return res.status(400).send("Poster já avaliado!");;
       } else {
         return insightModel.inserirNotaPessoal(idUsuario, posterId, notaUser);
       }
