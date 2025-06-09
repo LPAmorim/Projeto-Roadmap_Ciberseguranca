@@ -78,20 +78,18 @@
             })
     }
 
-    /* finalizar o fetch */
 
     function inserindoResultadoQuiz(idUser, idQuestaoRespondida, pontuacao) {
-        fetch("/quizz/listarQuestoes", {
+        fetch("/quizz/inserindoResultadoQuiz", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
 
-                nomeServer: nomeVar,
-                apelidoServer: apelidoVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
+                idUsuario: idUser,
+                idQuestao: idQuestaoRespondida,
+                idPontuacao: pontuacao,
             }),
         })
             .then(function (resposta) {
@@ -99,7 +97,7 @@
                 console.log("Status da resposta: ", resposta.status);
 
                 if (resposta.ok) {
-                    console.log("peguei os valores");
+                    console.log("Valores do quizz inserido com sucesso");
                     return resposta.json();
 
                 } else {
@@ -109,10 +107,9 @@
                 }
             })
             .then(function (questoes) {
-                console.log("Json avaliação comunidade rebebida: " + questoes);
+                console.log(": " + questoes);
                 console.log(questoes);
-
-                listandoJsonQuestoes(questoes);
+                window.location = 'insight.html';
             })
             .catch(function (erro) {
                 console.error("Erro na requisição: ", erro.message);
