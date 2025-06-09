@@ -49,7 +49,7 @@
 
                 <p><span>E-mail: </span><span class="font" id="span_email">Nenhum dado encontrado.</span></p>
 
-                <p><span>Data do Quiz: </span><span class="font" id="span_data">Nenhum dado encontrado.</span></p>
+                <p><span>Data do Questionário: </span><span class="font" id="span_data">Nenhum dado encontrado.</span></p>
 
                 <p><span>Classe: </span><span class="destaque" id="span_classe">Nenhum dado encontrado.</span></p>
 
@@ -59,7 +59,7 @@
             </div>
 
             <div class="recomendacao">
-                <h3>Analise do Quiz</h3>
+                <h3>Analise do Questionário</h3>
                 <hr style="margin-bottom: 10px;">
 
                 <p><span>FeedBack: </span>
@@ -68,10 +68,10 @@
 
                 
             </div>
-            <button class="quizz" onclick="iniciarQuizz()">Iniciar Quizz</button>
+            <button class="quizz" onclick="iniciarQuizz()">Iniciar Questionário</button>
         </div>
 
-        <p>Observação: Só e possivel fazer uma tentativa do <span style="font-size: 16px;" class="destaque">Quizz!</span></p>
+        <p>Observação: Só e possivel fazer uma tentativa do <span style="font-size: 16px;" class="destaque">Questionário!</span></p>
     </section>
 
     <section class="dash">
@@ -139,7 +139,7 @@
     spanEmail.innerHTML= email;
     
     function listandoResultadoDoQuiz() {
-        fetch("/insight/buscarAvaliacoes")
+        fetch("/insight/listandoResultadoDoQuiz")
             .then(function (resposta) {
                 console.log("Status da resposta: ", resposta.status);
 
