@@ -1,34 +1,31 @@
 var quizzModel = require("../models/quizzModel");
 
-// function inserirDadosQuizz(req, res) {
-//     const dadosQuizz = req.body.resultadoQuizz;
+function inserindoResultadoQuiz(req, res) {
+    let idUsuario = req.body.idUsuario;
+    const idQuestao = req.body.idQuestao;
+    const idPontuacao = req.body.idPontuacao;
+    
+    if (!idUsuario || !idQuestao || !idPontuacao) {
+        return res.status(400).send("Campos obrigatorios faltando!");
+    }
 
-//     const idUsuario = req.body.idUsuario;
-//     // const idDaPergunta = dadosQuizz.map(pergunta => pergunta.idDaPergunta);
-//     // const pontuacao = dadosQuizz.map(pontos => pontos.pontuacao);
-
-
-//     if (!idUsuario || !idDaPergunta || !pontuacao) {
-//         return res.status(400).send("Campos obrigatorios faltando!");
-//     }
-
-//     quizzModel.inserirDadosQuizz(idUsuario, dadosQuizz)
-//         .then(resultado => {
-//             if (resultado) {
-//                 res.status(201).json(resultado);
-//             } else {
-//                 res.status(500).send("Erro ao cadastrar o usuário.");
-//             }
-//         })
-//         .catch(erro => {
-//             if (erro.status) {
-//                 res.status(erro.status).send(erro.message);
-//             } else {
-//                 console.error("Erro ao inserir nota:", erro);
-//                 res.status(500).json(erro.sqlMessage || erro.message);
-//             }
-//         });
-// }
+    quizzModel.inserindoResultadoQuiz(idUsuario, idQuestao, idPontuacao)
+        .then(resultado => {
+            if (resultado) {
+                res.status(201).json(resultado);
+            } else {
+                res.status(500).send("Erro ao inserir resultado do questionário.");
+            }
+        })
+        .catch(erro => {
+            if (erro.status) {
+                res.status(erro.status).send(erro.message);
+            } else {
+                console.error("Erro ao inserir resultado do quizz:", erro);
+                res.status(500).json(erro.sqlMessage || erro.message);
+            }
+        });
+}
 
     function listarQuestoes(req, res) {
         quizzModel.listarQuestoes()
@@ -46,5 +43,6 @@ var quizzModel = require("../models/quizzModel");
     }
 
 module.exports = {
-    listarQuestoes
+    listarQuestoes,
+    inserindoResultadoQuiz
 };
