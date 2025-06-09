@@ -194,76 +194,80 @@ function GraficoMediaPoster(comunidade) {
 
 
 function graficoRadar(softSkill) { /* comunidade */
- 
-  const dataSetPontos = softSkill.map(item => item.pontuacao);
 
+  if (softSkill === null) {
+    softSkill = [0];
+  }
+
+    const dataSetPontos = softSkill.map(item => item.pontuacao);
+  
   grafico = new Chart(radar_skill, {
-  type: 'radar',
-  data: {
-    labels: ['Criatividade', 'Lógica', 'Persistência', 'Ética', 'Autonomia'],
-    datasets: [{
-      label: 'Soft Skills',
-      data: dataSetPontos,
-      backgroundColor: 'rgba(176, 132, 248, 0.2)',
-      borderColor: '#6d28d9',
-      pointBackgroundColor: '#6d28d9',
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      pointRadius: 5,
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      r: {
-      min: 0,
-      max: 5,
-        angleLines: {
-          color: 'black'
-        },
-        grid: {
-          color: 'black'
-        },
-        pointLabels: {
-          color: '#ffffff',
-          font: {
-            size: 14,
-            weight: 'bold'
-          }
-        },
-        ticks: {
-          backdropColor: 'transparent',
-          color: '#ffffff',
-          font: {
-            size: 12,
-            weight: 'bold'
-          },
-          stepSize: 1,
-          beginAtZero: true,
-        }
-      }
-    },
-    plugins: {
-      tooltip: {
-        backgroundColor: '#111111',
-        titleColor: '#ffffff',
-        bodyColor: '#b084f8',
+    type: 'radar',
+    data: {
+      labels: ['Criatividade', 'Lógica', 'Persistência', 'Ética', 'Autonomia'],
+      datasets: [{
+        label: 'Soft Skills',
+        data: dataSetPontos,
+        backgroundColor: 'rgba(176, 132, 248, 0.2)',
         borderColor: '#6d28d9',
-        borderWidth: 1,
-        padding: 10
+        pointBackgroundColor: '#6d28d9',
+        pointHoverBackgroundColor: '#fff',
+        borderWidth: 2,
+        pointRadius: 5,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          min: 0,
+          max: 5,
+          angleLines: {
+            color: 'black'
+          },
+          grid: {
+            color: 'black'
+          },
+          pointLabels: {
+            color: '#ffffff',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          },
+          ticks: {
+            backdropColor: 'transparent',
+            color: '#ffffff',
+            font: {
+              size: 12,
+              weight: 'bold'
+            },
+            stepSize: 1,
+            beginAtZero: true,
+          }
+        }
       },
-      legend: {
-        labels: {
-          color: '#ffffff',
-          font: {
-            size: 14,
-            weight: 'bold'
+      plugins: {
+        tooltip: {
+          backgroundColor: '#111111',
+          titleColor: '#ffffff',
+          bodyColor: '#b084f8',
+          borderColor: '#6d28d9',
+          borderWidth: 1,
+          padding: 10
+        },
+        legend: {
+          labels: {
+            color: '#ffffff',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
           }
         }
       }
     }
-  }
-});
+  });
 }
 
 /* fim do grafico no insight (ficha tecnica) */
