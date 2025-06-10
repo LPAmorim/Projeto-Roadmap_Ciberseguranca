@@ -71,27 +71,81 @@ function atualizarPoster(req, res) {
 
 function buscarAvaliacoes(req, res) {
   insightModel.buscarAvaliacoes()
-  .then(comunidade => {
+    .then(comunidade => {
+      
+      if (comunidade) {
+        res.status(200).json(comunidade);
 
-    if(comunidade) {
-      res.status(200).json(comunidade);
-    
-    } else {
-      res.status(401).send("Avaliações não foram encontrada");
-    }
-    
-  })
-  .catch(erro => {
-    console.log('Erro ao achar ', erro);
-    console.error("Erro na rota /insight/buscarAvaliacoes: ", erro);
+      } else {
+        res.status(401).send("Avaliações não foram encontrada");
+      }
 
-    res.status(500).json(erro.sqlMessage || erro.message);
-  });
+    })
+    .catch(erro => {
+      console.log('Erro ao achar ', erro);
+      console.error("Erro na rota /insight/buscarAvaliacoes: ", erro);
+
+      res.status(500).json(erro.sqlMessage || erro.message);
+    });
+}
+
+function listandoResultadoDoQuiz(req, res) {
+  let idUsuario = req.query.idUsuario;
+  console.log('id usuario ', idUsuario);
+  
+  
+  insightModel.listandoResultadoDoQuiz(idUsuario)
+    .then(softSkill => {
+
+      if (softSkill) {
+        res.status(200).json(softSkill);
+
+      } else {
+        res.status(401).send("Questionario não recebido");
+      }
+
+    })
+    .catch(erro => {
+      console.log('Erro ao achar ', erro);
+      console.error("Erro na rota /insight/buscarAvaliacoes: ", erro);
+
+      res.status(500).json(erro.sqlMessage || erro.message);
+    });
+}
+
+function listaPontuacaoDoUsuario(req, res) {
+  let idUsuario = req.query.idUsuario;
+  console.log('id usuario ', idUsuario);
+  
+  
+  insightModel.listaPontuacaoDoUsuario(idUsuario)
+    .then(lista => {
+
+      if (lista) {
+        res.status(200).json(lista);
+
+      } else if (lista.length < 0) {
+        lista = 0;
+        res.status(200).json(lista);
+
+      } else {
+        res.status(401).send("lista pontuação não foi recebida");
+      }
+
+    })
+    .catch(erro => {
+      console.log('Erro ao achar ', erro);
+      console.error("Erro na rota /insight/buscarAvaliacoes: ", erro);
+
+      res.status(500).json(erro.sqlMessage || erro.message);
+    });
 }
 
 module.exports = {
   inserirNota,
   listaMediaPorPoster,
   atualizarPoster,
-  buscarAvaliacoes
+  buscarAvaliacoes,
+  listandoResultadoDoQuiz,
+  listaPontuacaoDoUsuario
 };
