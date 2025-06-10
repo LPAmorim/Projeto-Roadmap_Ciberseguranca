@@ -157,10 +157,10 @@
                 }
             })
             .then(function (softSkill) {
-                console.log("Questionario recebido: " + softSkill);
+                console.log("Questionario recebido: " + softSkill[0]);
                 console.log('verificando se pegou o resultado de ficha resultado', softSkill);
 
-                if (softSkill) {
+                if (softSkill.length > 0) {
                 
                 const pontuacao = softSkill.map(item => item.pontuacaoTotal);
                 const datasFormatadas = softSkill.map(item => {
