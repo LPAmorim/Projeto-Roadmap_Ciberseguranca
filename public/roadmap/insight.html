@@ -71,8 +71,6 @@
             <button class="quizz" onclick="iniciarQuizz()">Iniciar Questionário</button>
         </div>
 
-        <p>Observação: Só e possivel fazer uma tentativa do <span style="font-size: 16px;"
-                class="destaque">Questionário!</span></p>
     </section>
 
     <section class="dash">
@@ -161,21 +159,21 @@
                 console.log('verificando se pegou o resultado de ficha resultado', softSkill);
 
                 if (softSkill.length > 0) {
-                
-                const pontuacao = softSkill.map(item => item.pontuacaoTotal);
-                const datasFormatadas = softSkill.map(item => {
-                    const [ano, mes, dia] = item.dataRealizacaoQuiz.split("T")[0].split("-");
-                    return dia && mes && ano ? `${dia}/${mes}/${ano}` : "Data inválida";
-                });
-                const feedbackUsuario = softSkill.map(item => item.analise);
-                const classeDoUsuario = softSkill.map(item => item.classe);
+
+                    const pontuacao = softSkill.map(item => item.pontuacaoTotal);
+                    const datasFormatadas = softSkill.map(item => {
+                        const [ano, mes, dia] = item.dataRealizacaoQuiz.split("T")[0].split("-");
+                        return dia && mes && ano ? `${dia}/${mes}/${ano}` : "Data inválida";
+                    });
+                    const feedbackUsuario = softSkill.map(item => item.analise);
+                    const classeDoUsuario = softSkill.map(item => item.classe);
 
 
-                span_pontuacao.innerHTML = pontuacao;
-                span_classe.innerHTML = classeDoUsuario;
-                span_data.innerHTML = datasFormatadas;
-                feedback.innerHTML = feedbackUsuario;
-            }
+                    span_pontuacao.innerHTML = pontuacao;
+                    span_classe.innerHTML = classeDoUsuario;
+                    span_data.innerHTML = datasFormatadas;
+                    feedback.innerHTML = feedbackUsuario;
+                }
 
             })
             .catch(function (erro) {
