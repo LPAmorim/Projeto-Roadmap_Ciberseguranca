@@ -1,4 +1,3 @@
--- Active: 1743193382408@@127.0.0.1@3306@roadmap_cyber
 CREATE DATABASE roadmap_cyber;
 USE roadmap_cyber;
 
@@ -153,8 +152,16 @@ SELECT*from filmes_series;
 SELECT*from insight;
 select * from quiz_perguntas;
 select * from alternativas;
-select * from ficha_tecnica;
+select pontuacao from ficha_tecnica where fkuser = 2;
 select * from ficha_resultado;
+select 
+	fr.pontuacao_total as pontuacaoTotal,
+    fr.dataFinalizacao as dataRealizacaoQuiz,
+    fd.analise as analise,
+    fd.classe as classe
+    from ficha_resultado fr
+    inner join feedback fd 
+    on fr.fkfeedback = fd.id where fr.fkuser = 1;
 
 select 
 	qp.id, qp.pergunta,
@@ -166,8 +173,8 @@ on qp.id = pg.fkquiz_perguntas;
 SELECT 
     qp.id,
     qp.pergunta AS questao,
-    GROUP_CONCAT(pg.texto ORDER BY pg.valor) AS alternativas,
-    GROUP_CONCAT(pg.valor ORDER BY pg.valor) AS pontos
+    GROUP_CONCAT(pg.texto ORDER BY pg.valor SEPARATOR ';') AS alternativas,
+    GROUP_CONCAT(pg.valor ORDER BY pg.valor SEPARATOR ';') AS pontos
 FROM quiz_perguntas qp
 JOIN alternativas pg ON qp.id = pg.fkquiz_perguntas
 GROUP BY qp.id, qp.pergunta;
@@ -176,7 +183,7 @@ GROUP BY qp.id, qp.pergunta;
  INSERT INTO ficha_tecnica (fkuser, fkquiz_perguntas, pontuacao)
         VALUES (2, 4, 3);
 
-truncate ficha_tecnica;
+truncate ficha_resultado;
 
 
 
@@ -202,7 +209,17 @@ FROM (
 JOIN feedback f
   ON pontos.total_pontos BETWEEN f.pontuacao_min AND f.pontuacao_max;
     
-
+    
+    
+    
+    
+create table datas (
+dat1 date,
+dat2 date,
+dat3 date
+);
+    insert into datas(dat1, dat2, dat3)values (CURDATE(), now(), '1999-02-15');
+    select * from datas;
 ALTER TABLE filmes_series AUTO_INCREMENT = 1;
 
 SELECT ROUND(AVG(nota), 1) FROM insight WHERE fkfilmes_series = 2;
@@ -212,3 +229,12 @@ select id, nome, apelido, email, senha FROM users WHERE (email = '' OR 1=1) limi
  
 SELECT DATE_FORMAT(sua_coluna_de_data, '%d %y %Y') AS data_formatada
 FROM sua_tabela;
+desc ficha_resultado;
+ select 
+	fr.pontuacao_total as pontuacaoTotal,
+    fr.dataFinalizacao as dataRealizacaoQuiz,
+    fd.analise as analise,
+    fd.classe as classe
+    from ficha_resultado fr
+    inner join feedback fd 
+    on fr.fkfeedback = fd.id where fr.fkuser = 1;
