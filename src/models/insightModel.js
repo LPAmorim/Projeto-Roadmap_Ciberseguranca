@@ -48,10 +48,38 @@ function buscarAvaliacoes() {
   return database.executar(instrucaoSql);
 }
 
+function listandoResultadoDoQuiz(idUsuario) {
+  var instrucaoSql = `
+  select 
+	fr.pontuacao_total as pontuacaoTotal,
+    fr.dataFinalizacao as dataRealizacaoQuiz,
+    fd.analise as analise,
+    fd.classe as classe
+    from ficha_resultado fr
+    inner join feedback fd 
+    on fr.fkfeedback = fd.id where fr.fkuser = ${idUsuario};
+  `;
+
+
+  console.log("Executando SQL:", instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+function listaPontuacaoDoUsuario(idUsuario) {
+  var instrucaoSql = `
+  select pontuacao from ficha_tecnica where fkuser = ${idUsuario};
+  `;
+  
+  console.log("Executando SQL:", instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
 module.exports = {
   inserirNotaPessoal,
   listarMediaPoster,
   verificarPosterListar,
   buscarMediaEmTodosOsPoster,
-  buscarAvaliacoes
+  buscarAvaliacoes,
+  listandoResultadoDoQuiz,
+  listaPontuacaoDoUsuario
 }
