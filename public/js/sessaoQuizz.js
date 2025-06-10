@@ -1,4 +1,3 @@
-
 function iniciarQuizz() {
     let divApagar = document.getElementById('telaDeInicio');
     divApagar.style.display = "none";
