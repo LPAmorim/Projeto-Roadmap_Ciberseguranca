@@ -193,21 +193,18 @@ function GraficoMediaPoster(comunidade) {
 /* fim do grafico no insight (media/user) */
 
 
-function graficoRadar(softSkill) { /* comunidade */
 
-  if (softSkill === null) {
-    softSkill = [0];
-  }
+function graficoRadar(pontuacao) { 
+    
+    const totalDePontos = pontuacao.map(item => item.pontuacao)
 
-    const dataSetPontos = softSkill.map(item => item.pontuacao);
-  
-  grafico = new Chart(radar_skill, {
+    grafico = new Chart(radar_skill, {
     type: 'radar',
     data: {
       labels: ['Criatividade', 'Lógica', 'Persistência', 'Ética', 'Autonomia'],
       datasets: [{
         label: 'Soft Skills',
-        data: dataSetPontos,
+        data: totalDePontos,
         backgroundColor: 'rgba(176, 132, 248, 0.2)',
         borderColor: '#6d28d9',
         pointBackgroundColor: '#6d28d9',
