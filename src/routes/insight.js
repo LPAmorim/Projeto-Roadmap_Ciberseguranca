@@ -17,5 +17,14 @@ router.get("/poster", function (req, res) {
 
 router.get("/buscarAvaliacoes", function (req, res) {
   insightController.buscarAvaliacoes(req, res);
-})
+});
+
+router.get("/listandoResultadoDoQuiz", function (req, res) {
+  insightController.listandoResultadoDoQuiz(req, res);
+});
+
+router.get("/listaPontuacaoDoUsuario", function (req, res) {
+  insightController.listaPontuacaoDoUsuario(req, res);
+});
+
 module.exports = router;
